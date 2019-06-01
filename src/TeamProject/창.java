@@ -5,10 +5,10 @@ public class Ã¢ extends Weapon {
 	public Ã¢(Player p)
 	{
 		super(p);
-		this.weaponConstant = 1.49;
+		this.weaponConstant = 1.20;
 		this.name = new String[] {"Á×Ã¢","ÀåÆÈ»ç¸ð","ÇÇ³ªÄ«"};
 		this.skillName = new String[] {"´ÙÅ©ÀÓÆäÀÏ", "±Ã±×´Ò µð¼¾Æ®"};
-		this.skillMP = new int[] {20,70};
+		this.skillMP = new int[] {20,60};
 	}
 	protected void setSkill1(Player owner) {
 		this.skillPoint = 1.2;

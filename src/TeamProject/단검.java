@@ -7,7 +7,7 @@ public class 단검 extends Weapon {
 		this.weaponConstant = 1.3;
 		this.name = new String[] {"후르츠대거","태극부채","블러드대거"};
 		this.skillName = new String[] {"부메랑스텝","암살"};
-		this.skillMP = new int[] {30,80};
+		this.skillMP = new int[] {30,90};
 		
 	}
 	protected void setSkill1(Player owner) {
@@ -17,6 +17,7 @@ public class 단검 extends Weapon {
 		if(Math.random()<=0.05) {
 			owner.getEnemy().setHp(0);
 			System.out.println("즉사의 일격!");
+			//너무사기아닌가;; 확률은 낮지만 무섭
 		}
 		else
 			this.skillPoint=1.8;

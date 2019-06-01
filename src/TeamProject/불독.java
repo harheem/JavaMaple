@@ -1,6 +1,5 @@
 package TeamProject;
 public class 불독 extends 마법사 {
-	private Player opponent;
 	public 불독(int point, boolean user)
 	{
 		super(point,user);
@@ -9,30 +8,28 @@ public class 불독 extends 마법사 {
 	}
     public void attack(Player p) //도트데미지 구현하기 위해 따로 오버라이딩
     {
-    	this.opponent = p;
+    	this.enemy = p;
     	if(!this.isUser)
     	{
-			if((double)this.hp/this.m_hp <= 0.3) { drinkHPpotion(); this.time--; dot(p); return;}
-			else if((double)this.mp/this.m_mp <= 0.3) { drinkMPpotion(); this.time--; dot(p); return;}
-    	}
-    	if(this.time<=0) 
-    	{
-    		if(this.time==0) buffRelease();
-    		if(this.isUser) showUser();
-    		else buff();
+			if((double)this.hp/this.m_hp <= 0.3) { if(drinkHPpotion()) { this.time--; dot(p); return;}}
+			else if((double)this.mp/this.m_mp <= 0.3) { if(drinkMPpotion()) {this.time--; dot(p); return;}}
     	}
     	w.attack(p);
     	this.time--;
+    	this.hpPotionCooltime--;
+    	this.mpPotionCooltime--;
     }
-    public void drinkHPpotion()
+    public boolean drinkHPpotion()
     {
-    	super.drinkHPpotion();
-    	if(((완드)this.w).getDot()>0) dot(opponent);
+    	boolean rt = super.drinkHPpotion();
+    	if(rt==true) if(((완드)this.w).getDot()>0) dot(enemy);
+    	return rt;
     }
-    public void drinkMPpotion()
+    public boolean drinkMPpotion()
     {
-    	super.drinkMPpotion();
-    	if(((완드)this.w).getDot()>0) dot(opponent);
+    	boolean rt = super.drinkMPpotion();
+    	if(rt==true) if(((완드)this.w).getDot()>0) dot(enemy);
+    	return rt;
     }
     private void dot(Player p)
     {

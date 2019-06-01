@@ -2,11 +2,11 @@ package TeamProject;
 //불독
 public class 완드  extends Weapon{
 	private int dot;
-	private final int DOTDAMAGE = 50;
+	private final int DOTDAMAGE = 100;
 	public 완드(Player p)
 	{
 		super(p);
-		this.weaponConstant = 1.0;
+		this.weaponConstant = 1.1;
 		this.name = new String[] {"우드완드","위저드완드","드래곤완드"};
 		this.skillName = new String[] {"페럴라이즈", "메테오"};
 		this.skillMP = new int[] {50,150};

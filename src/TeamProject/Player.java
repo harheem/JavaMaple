@@ -20,7 +20,9 @@ public abstract class Player {
     protected int skipTurn;
     //
     protected Player enemy;
-    
+    //
+    protected int hpPotionCooltime;
+    protected int mpPotionCooltime;
 
     public Player(int point, boolean user) {
     	this.point = point;
@@ -28,6 +30,8 @@ public abstract class Player {
     	this.isUser = user;
     	this.skipTurn = 0;
     	this.enemy=null;
+    	this.hpPotionCooltime = 0;
+    	this.mpPotionCooltime = 0;
     	}
     
     public abstract void buff();
@@ -63,8 +67,8 @@ public abstract class Player {
     	if(!this.isUser) //플레이어가 컴퓨터고 HP,MP가 낮으면 물약먹기
     	{
 
-			if((double)this.hp/this.m_hp <= 0.3) { drinkHPpotion(); this.time--; return;}
-			else if((double)this.mp/this.m_mp <= 0.3) { drinkMPpotion(); this.time--; return;}
+			if((double)this.hp/this.m_hp <= 0.3) { if(drinkHPpotion()) { this.time--; return;}}
+			else if((double)this.mp/this.m_mp <= 0.3) { if(drinkMPpotion()) {this.time--; return;}}
     	}
     	if(this.time<=0) //버프스킬 사용할지 물어보기
     	{
@@ -73,6 +77,8 @@ public abstract class Player {
     	}
     	w.attack(p); //공격스킬
     	this.time--;
+    	this.hpPotionCooltime--;
+    	this.mpPotionCooltime--;
     }
     
     public void showUser() 
@@ -105,26 +111,44 @@ public abstract class Player {
     	
     }
 
-    public void drinkHPpotion()
+    public boolean drinkHPpotion()
     {
+    	if(this.hpPotionCooltime<=0) this.hpPotionCooltime = 2;
+    	else 
+    	{
+    		System.out.println("아직 HP포션을 사용할 수 없습니다! 남은 시간 : " + this.hpPotionCooltime);
+    		return false;
+    	}
+    	if(time==0 && isUser) buffRelease();
+    	time--;
     	System.out.println(this.name + "이(가) HP물약을 사용합니다! HP의 50%가 회복됩니다."); 
     	System.out.print("현재hp: " + this.hp);
     	this.hp = Math.min(m_hp, (int)(this.m_hp*0.5) + this.hp);
-    	if(time==0) buffRelease();
-    	time--;
     	System.out.println(" -> " + this.hp);
+    	this.mpPotionCooltime--;
+    	return true;
+    	//포션의 개수제한을 안두면 게임이 안끝날것같은데...
     
     }
 
-    public void drinkMPpotion()
+    public boolean drinkMPpotion()
     {
+    	if(this.mpPotionCooltime<=0) this.mpPotionCooltime = 2;
+    	else 
+    	{
+    		System.out.println("아직 HP포션을 사용할 수 없습니다! 남은 시간 : " + this.mpPotionCooltime);
+    		return false;
+    	}
+    	if(time==0 && isUser) buffRelease();
+       	time--;
     	System.out.println(this.name + "이(가) MP물약을 사용합니다! MP의 50%가 회복됩니다."); 
     	System.out.print("현재mp: " + this.mp);
     	this.mp = Math.min(m_mp, (int)(this.m_mp*0.5) + this.mp);
-    	if(time==0) buffRelease();
-       	time--;
-    	System.out.println(" -> " + this.mp);
+    	System.out.println(" -> " + this.mp);    
+    	this.hpPotionCooltime--;
+    	return true;
     }
+    //법사에경우 갯수제한을 안두면 안죽을것같음
 
     public void addStats(){
     }
