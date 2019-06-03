@@ -3,31 +3,27 @@ package MapleClass;
 import Maple.Buffable;
 
 public abstract class 궁수 extends Player implements Buffable {
-
+	protected int initial_power;
 	public 궁수() {
-		this.m_hp = 500;
-		this.m_mp = 500;
+		this.m_hp = 750;
+		this.m_mp = 750;
 		this.hp = this.m_hp;
 		this.mp = this.m_mp;
 		this.buffSkillName = "샤프아이즈";
 		this.buffSkillMp = 50;
 	}
-
-	@Override
-	public void buffstkill() {
+	public void buffskill() {
 		if (this.mp < this.buffSkillMp)
 			return;
 		else {
 			this.mp -= this.buffSkillMp;
-			this.power = 240;
+			this.power*=1.3; //공격력 30%강화
 			this.buffTime = 3;
 		}
 
 	}
-
-	@Override
 	public void buffRealease() {
-		this.power = 160;
+		this.power = initial_power; // power/=1.3 해도 되는데 버프 실행 해제과정에서 오류 생길까봐 이렇게 해놓을게요
 	}
 
 }

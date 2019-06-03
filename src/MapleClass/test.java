@@ -10,6 +10,7 @@ public class test {
 		b.reinforce();
 		a.setHp(500);
 		b.skillAttack(a, 0);
+		a.drinkHPpotion();
 	}
 
 }

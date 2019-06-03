@@ -20,15 +20,42 @@ public abstract class Player implements Attackable, Reinforcable {
     protected int mpPotionCooltime;
     protected Weapon w;
 
-	public void drinkHPpotion() {
-	}
+    public boolean drinkHPpotion()
+    {
+    	if(this.hpPotionCooltime<=0) this.hpPotionCooltime = 2;
+    	else 
+    	{
+    		System.out.println("아직 HP포션을 사용할 수 없습니다! 남은 시간 : " + this.hpPotionCooltime);
+    		return false;
+    	}
+    	System.out.println(this.name + "이(가) HP물약을 사용합니다! HP의 50%가 회복됩니다."); 
+    	System.out.print("현재hp: " + this.hp);
+    	this.hp = Math.min(m_hp, (int)(this.m_hp*0.5) + this.hp);
+    	System.out.println(" -> " + this.hp);
+    	this.mpPotionCooltime--;
+    	return true;    
+    }
 
-	public void drinkMPpotion() {
-	}
+    public boolean drinkMPpotion()
+    {
+    	if(this.mpPotionCooltime<=0) this.mpPotionCooltime = 2;
+    	else 
+    	{
+    		System.out.println("아직 HP포션을 사용할 수 없습니다! 남은 시간 : " + this.mpPotionCooltime);
+    		return false;
+    	}
+    	System.out.println(this.name + "이(가) MP물약을 사용합니다! MP의 50%가 회복됩니다."); 
+    	System.out.print("현재mp: " + this.mp);
+    	this.mp = Math.min(m_mp, (int)(this.m_mp*0.5) + this.mp);
+    	System.out.println(" -> " + this.mp);    
+    	this.hpPotionCooltime--;
+    	return true;
+    }
 
 	public void attack(Player enemy) {
 		w.attack(enemy);
-		enemy.hp -= (this.power - enemy.def/100);
+		//if(enemy==마법사) passive(this.power - enemy.def/100);
+		/*else*/ enemy.hp -= (this.power - enemy.def/100);
 		System.out.println("가한 데미지 : " + (this.power - enemy.def/100));
 		System.out.println("적 남은 체력 :" +enemy.hp);
 	}
@@ -36,13 +63,15 @@ public abstract class Player implements Attackable, Reinforcable {
 	public void skillAttack(Player enemy, int skillNum) {
 		System.out.println(this.name + "의 " + w.getSkillName()[skillNum] + "!");
 		int damage = (this.power*(w.getSkillPower()[skillNum]/10) - enemy.def/100);
-		enemy.hp -= damage;
+		//if(enemy==마법사) passive(this.power - enemy.def/100);
+		/*else*/ enemy.hp -= damage;
 		System.out.println("가한 데미지 : " + damage);
 		System.out.println("적 남은 체력 :" +enemy.hp);
 	}
-
+	public void passive(int realDamage) {
+		//마법사 메서드에서만 오버라이딩
+	}
 	public abstract void reinforce();
-
 	public String getName() {
 		return name;
 	}

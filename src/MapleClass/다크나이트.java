@@ -19,7 +19,7 @@ public class 다크나이트 extends 전사 {
 	}
 
 	@Override
-	public void buffstkill() {
+	public void buffskill() {
 		this.m_hp = (int) (this.m_hp * 1.5);
 		this.m_mp = (int) (this.m_mp * 1.5);
 		this.buffTime = 3;
@@ -29,11 +29,13 @@ public class 다크나이트 extends 전사 {
 	public void reinforce() {
 		w.setWpIndex(w.getWpIndex() + 1);
 		w.reinforce();
-		this.hp += point * 5;
-		this.mp += point * 5;
+		this.m_hp += point * 5;
+		this.m_mp += point * 5;
+		this.initial_m_hp = m_hp;
+		this.initial_m_mp = m_mp;
+		this.hp = this.m_hp;
+		this.mp = this.m_mp;
 		this.power += point * 5;
-		this.hp += point * 5;
-		this.hp += point * 5;
 	}
 
 	@Override

@@ -19,11 +19,11 @@ public class ½ãÄÝ extends ¸¶¹ý»ç {
 	public void reinforce() {
 		w.setWpIndex(w.getWpIndex() + 1);
 		w.reinforce();
-		this.hp += point * 5;
-		this.mp += point * 5;
+		this.m_hp += point * 5;
+		this.m_mp += point * 5;
+		this.hp = this.m_hp;
+		this.mp = this.m_mp;
 		this.power += point * 5;
-		this.hp += point * 5;
-		this.hp += point * 5;
 	}
 
 }

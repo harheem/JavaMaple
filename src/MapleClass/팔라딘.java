@@ -13,21 +13,22 @@ public class ÆÈ¶óµò extends Àü»ç {
 		this.buffSkillMp = 30; // À§Çù ¼Ò¸ðÇÒ mp
 	}
 
-	@Override
-	public void buffstkill() {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public void reinforce() {
 		w.setWpIndex(w.getWpIndex() + 1);
 		w.reinforce();
-		this.hp += point * 5;
-		this.mp += point * 5;
+		this.m_hp += point * 5;
+		this.m_mp += point * 5;
+		this.hp = this.m_hp;
+		this.mp = this.m_mp;
 		this.power += point * 5;
-		this.hp += point * 5;
-		this.hp += point * 5;
+	}
+	
+	@Override
+	public void buffskill() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -35,5 +36,7 @@ public class ÆÈ¶óµò extends Àü»ç {
 		// TODO Auto-generated method stub
 
 	}
+
+
 
 }

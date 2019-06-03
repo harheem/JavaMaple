@@ -11,11 +11,13 @@ public class 불독 extends 마법사 {
 
 	@Override
 	public void reinforce() {
-		this.hp += point * 5;
-		this.mp += point * 5;
+		w.setWpIndex(w.getWpIndex() + 1);
+		w.reinforce();
+		this.m_hp += point * 5;
+		this.m_mp += point * 5;
+		this.hp = this.m_hp;
+		this.mp = this.m_mp;
 		this.power += point * 5;
-		this.hp += point * 5;
-		this.hp += point * 5;
 	}
 
 }

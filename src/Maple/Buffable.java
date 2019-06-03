@@ -2,7 +2,7 @@ package Maple;
 
 public interface Buffable {
 
-    public void buffstkill();
+    public void buffskill();
     public void buffRealease();
 
 }
