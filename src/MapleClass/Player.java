@@ -54,8 +54,8 @@ public abstract class Player implements Attackable, Reinforcable {
 
 	public void attack(Player enemy) {
 		w.attack(enemy);
-		//if(enemy==마법사) passive(this.power - enemy.def/100);
-		/*else*/ enemy.hp -= (this.power - enemy.def/100);
+		if(enemy instanceof 마법사) enemy.passive(this.power - enemy.def/100);
+		else enemy.hp -= (this.power - enemy.def/100);
 		System.out.println("가한 데미지 : " + (this.power - enemy.def/100));
 		System.out.println("적 남은 체력 :" +enemy.hp);
 	}
@@ -63,14 +63,15 @@ public abstract class Player implements Attackable, Reinforcable {
 	public void skillAttack(Player enemy, int skillNum) {
 		System.out.println(this.name + "의 " + w.getSkillName()[skillNum] + "!");
 		int damage = (this.power*(w.getSkillPower()[skillNum]/10) - enemy.def/100);
-		//if(enemy==마법사) passive(this.power - enemy.def/100);
-		/*else*/ enemy.hp -= damage;
+		if(enemy instanceof 마법사) enemy.passive(this.power - enemy.def/100);
+		else enemy.hp -= damage;
 		System.out.println("가한 데미지 : " + damage);
 		System.out.println("적 남은 체력 :" +enemy.hp);
 	}
-	public void passive(int realDamage) {
+	public void passive(int realDamage) { 
 		//마법사 메서드에서만 오버라이딩
 	}
+	
 	public abstract void reinforce();
 	public String getName() {
 		return name;
