@@ -14,8 +14,8 @@ public abstract class Weapon implements Attackable, Reinforcable {
 	protected int[] skillPower;
 
 	@Override
-	public void attack(Player enemy) {
-		System.out.println(this.getWpName()[this.wpIndex] + "(으)로 " + enemy.getName() + "에게 공격합니다.");
+	public void attack() {
+		System.out.println(this.getWpName()[this.wpIndex] + "(으)로 적에게 공격합니다.");
 	}
 
 	@Override

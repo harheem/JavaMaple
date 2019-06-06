@@ -10,7 +10,7 @@ public class 다크나이트 extends 전사 {
 	public 다크나이트() {
 		this.w = new 창();
 		this.name = "다크나이트";
-		this.power = 120;
+		this.power = 120 + w.getWpPower()[w.getWpIndex()];
 		this.def = 160;
 		this.buffSkillName = "하이퍼바디";
 		this.buffSkillMp = 30; // 하이퍼바디 소모할 mp
@@ -20,9 +20,13 @@ public class 다크나이트 extends 전사 {
 
 	@Override
 	public void buffskill() {
-		this.m_hp = (int) (this.m_hp * 1.5);
-		this.m_mp = (int) (this.m_mp * 1.5);
-		this.buffTime = 3;
+		if (this.mp < this.buffSkillMp)
+			return;
+		else {
+			this.m_hp = (int) (this.m_hp * 1.5);
+			this.m_mp = (int) (this.m_mp * 1.5);
+			this.buffTime = 3;
+		}
 	}
 
 	@Override
@@ -39,7 +43,7 @@ public class 다크나이트 extends 전사 {
 	}
 
 	@Override
-	public void buffRealease() {
+	public void buffRelease() {
 		this.m_hp = initial_m_hp;
 		this.m_mp = initial_m_mp;
 		if (this.hp > this.m_hp)

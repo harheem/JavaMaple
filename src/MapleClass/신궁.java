@@ -1,14 +1,14 @@
 package MapleClass;
 
-import MapleWeapon.È°;
+import MapleWeapon.¼®±Ã;
 
 public class ½Å±Ã extends ±Ã¼ö {
 
 	public ½Å±Ã() {
-		this.w = new È°();
+		this.w = new ¼®±Ã();
 		this.name = "½Å±Ã";
 		this.power = (150 + point * 5) + w.getWpPower()[w.getWpIndex()];
-		this.def = (150 + point * 5);
+		this.def = (130 + point * 5);
 		this.initial_power=power;
 	}
 

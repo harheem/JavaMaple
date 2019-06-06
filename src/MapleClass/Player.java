@@ -1,16 +1,17 @@
 package MapleClass;
 
 import Maple.Attackable;
+import Maple.Buffable;
 import Maple.Reinforcable;
 import MapleWeapon.Weapon;
 
-public abstract class Player implements Attackable, Reinforcable {
+public abstract class Player implements Attackable, Reinforcable, Buffable{
 	protected String name;
 	protected int hp;
 	protected int mp;
-	protected int def;
+	protected double def;
 	protected int point = 1;
-	protected int power;
+	protected double power;
 	protected int m_hp;
 	protected int m_mp;
 	protected int buffTime;
@@ -18,8 +19,15 @@ public abstract class Player implements Attackable, Reinforcable {
 	protected int buffSkillMp;
     protected int hpPotionCooltime;
     protected int mpPotionCooltime;
+    protected int skill_Cooltime1;
+    protected int skill_Cooltime2;
+    protected Player enemy;
     protected Weapon w;
-
+    public Player()
+    {
+    	skill_Cooltime1 = 3;
+    	skill_Cooltime2 = 10;
+    }
     public boolean drinkHPpotion()
     {
     	if(this.hpPotionCooltime<=0) this.hpPotionCooltime = 2;
@@ -52,23 +60,27 @@ public abstract class Player implements Attackable, Reinforcable {
     	return true;
     }
 
-	public void attack(Player enemy) {
-		w.attack(enemy);
-		if(enemy instanceof 마법사) enemy.passive(this.power - enemy.def/100);
-		else enemy.hp -= (this.power - enemy.def/100);
-		System.out.println("가한 데미지 : " + (this.power - enemy.def/100));
-		System.out.println("적 남은 체력 :" +enemy.hp);
-	}
-
-	public void skillAttack(Player enemy, int skillNum) {
-		System.out.println(this.name + "의 " + w.getSkillName()[skillNum] + "!");
-		int damage = (this.power*(w.getSkillPower()[skillNum]/10) - enemy.def/100);
-		if(enemy instanceof 마법사) enemy.passive(this.power - enemy.def/100);
+	public void attack() {
+		int damage;
+		w.attack();
+		damage = (int)((this.power / (enemy.def/100))*(0.75+Math.random()/2));
+		if(enemy instanceof 마법사) enemy.passive(damage);
 		else enemy.hp -= damage;
 		System.out.println("가한 데미지 : " + damage);
 		System.out.println("적 남은 체력 :" +enemy.hp);
+		this.buffTime--;
 	}
-	public void passive(int realDamage) { 
+
+	public void skillAttack(int skillNum) {
+		System.out.println(this.name + "의 " + w.getSkillName()[skillNum] + "!");
+		int damage = (int)(((this.power*(w.getSkillPower()[skillNum]/10)) / (enemy.def/100) *(0.75+Math.random()/2)));
+		if(enemy instanceof 마법사) enemy.passive(damage);
+		else enemy.hp -= damage;
+		System.out.println("가한 데미지 : " + damage);
+		System.out.println("적 남은 체력 :" +enemy.hp);
+		this.buffTime--;
+	}
+	public void passive(double realDamage) { 
 		//마법사 메서드에서만 오버라이딩
 	}
 	
@@ -97,7 +109,7 @@ public abstract class Player implements Attackable, Reinforcable {
 		this.mp = mp;
 	}
 
-	public int getDef() {
+	public double getDef() {
 		return def;
 	}
 
@@ -113,7 +125,7 @@ public abstract class Player implements Attackable, Reinforcable {
 		this.point = point;
 	}
 
-	public int getPower() {
+	public double getPower() {
 		return power;
 	}
 
@@ -176,5 +188,29 @@ public abstract class Player implements Attackable, Reinforcable {
 	public void setMpPotionCooltime(int mpPotionCooltime) {
 		this.mpPotionCooltime = mpPotionCooltime;
 	}
+	public Player getEnemy() {
+		return enemy;
+	}
 
+	public void setEnemy(Player enemy) {
+		this.enemy = enemy;
+	}
+	public abstract void buffskill();
+	public abstract void buffRelease();
+	public int getSkill_Cooltime1() {
+		return skill_Cooltime1;
+	}
+	public void setSkill_Cooltime1(int skill_Cooltime1) {
+		this.skill_Cooltime1 = skill_Cooltime1;
+	}
+	public int getSkill_Cooltime2() {
+		return skill_Cooltime2;
+	}
+
+	public void setSkill_Cooltime2(int skill_Cooltime2) {
+		this.skill_Cooltime2 = skill_Cooltime2;
+	}
+	public Weapon getW() {
+		return w;
+	}
 }
