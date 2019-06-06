@@ -18,6 +18,7 @@ public class 나이트로드 extends 도적 {
 		this.m_mp += point * 5;
 		this.hp = this.m_hp;
 		this.mp = this.m_mp;
-		this.power += point * 5;
+		this.initial_power += point * 5;
+		this.power = initial_power;
 	}
 }
