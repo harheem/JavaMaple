@@ -7,9 +7,9 @@ public class 썬콜 extends 마법사 {
 	public 썬콜() {
 		this.w = new 스태프();
 		this.name = "썬콜";
+    	this.power = 160 + w.getWpPower()[w.getWpIndex()];
+    	this.def = 120;
 	}
-
-
 
 	@Override
 	public void reinforce() {

@@ -6,7 +6,7 @@ public abstract class 궁수 extends Player implements Buffable {
 	protected double initial_power;
 	public 궁수() {
 		this.m_hp = 750;
-		this.m_mp = 750;
+		this.m_mp = 300;
 		this.hp = this.m_hp;
 		this.mp = this.m_mp;
 		this.buffSkillName = "샤프아이즈";
@@ -17,7 +17,7 @@ public abstract class 궁수 extends Player implements Buffable {
 			return;
 		else {
 			this.mp -= this.buffSkillMp;
-			this.power*=1.3; //공격력 30%강화
+			this.power*=1.25; //공격력 30%강화
 			this.buffTime = 3;
 		}
 
