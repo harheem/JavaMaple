@@ -4,6 +4,6 @@ import MapleClass.Player;
 
 public interface Attackable {
 
-    public void attack(Player p);
+    public void attack();
 
 }

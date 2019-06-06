@@ -7,6 +7,8 @@ public class 불독 extends 마법사 {
 	public 불독() {
 		this.w = new 완드();
 		this.name = "불독";
+    	this.power = 150 + w.getWpPower()[w.getWpIndex()];
+    	this.def = 130;
 	}
 
 	@Override
@@ -19,5 +21,6 @@ public class 불독 extends 마법사 {
 		this.mp = this.m_mp;
 		this.power += point * 5;
 	}
+	
 
 }

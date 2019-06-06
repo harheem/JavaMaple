@@ -7,12 +7,8 @@ public class ½ãÄİ extends ¸¶¹ı»ç {
 	public ½ãÄİ() {
 		this.w = new ½ºÅÂÇÁ();
 		this.name = "½ãÄİ";
-	}
-
-	@Override
-	public void attack(Player p) {
-		// TODO Auto-generated method stub
-
+    	this.power = 160 + w.getWpPower()[w.getWpIndex()];
+    	this.def = 120;
 	}
 
 	@Override

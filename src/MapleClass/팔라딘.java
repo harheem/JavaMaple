@@ -3,12 +3,12 @@ package MapleClass;
 import MapleWeapon.µÎ¼Õ°Ë;
 
 public class ÆÈ¶óµò extends Àü»ç {
-
+	private double enemy_initial_def;
 	public ÆÈ¶óµò() {
 		this.w = new µÎ¼Õ°Ë();
 		this.name = "ÆÈ¶óµò";
 		this.power = 100 + w.getWpPower()[w.getWpIndex()];
-		this.def = 160;
+		this.def = 180;
 		this.buffSkillName = "À§Çù";
 		this.buffSkillMp = 30; // À§Çù ¼Ò¸ðÇÒ mp
 	}
@@ -27,14 +27,22 @@ public class ÆÈ¶óµò extends Àü»ç {
 	
 	@Override
 	public void buffskill() {
-		// TODO Auto-generated method stub
+		if (this.mp < this.buffSkillMp)
+			return;
+		else {
+			enemy_initial_def = enemy.getDef();
+			this.def *=1.25;
+			enemy.def*=0.75;
+		}
+
 		
 	}
 
 	@Override
-	public void buffRealease() {
-		// TODO Auto-generated method stub
-
+	public void buffRelease() {
+		this.def /=1.25;
+		enemy.def = enemy_initial_def;
+		
 	}
 
 

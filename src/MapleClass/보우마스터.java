@@ -1,14 +1,14 @@
 package MapleClass;
 
-import MapleWeapon.석궁;
+import MapleWeapon.활;
 
 public class 보우마스터 extends 궁수 {
 
 	public 보우마스터() {
-		this.w = new 석궁();
+		this.w = new 활();
 		this.name = "보우마스터";
-		this.power = (150 + point * 5);
-		this.def = (150 + point * 5);
+		this.power = (150 + point * 5) + + w.getWpPower()[w.getWpIndex()];
+		this.def = (130 + point * 5);
 		this.initial_power=power;
 
 	}
