@@ -19,9 +19,15 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 	protected int buffSkillMp;
     protected int hpPotionCooltime;
     protected int mpPotionCooltime;
+    protected int skill_Cooltime1;
+    protected int skill_Cooltime2;
     protected Player enemy;
     protected Weapon w;
-
+    public Player()
+    {
+    	skill_Cooltime1 = 3;
+    	skill_Cooltime2 = 10;
+    }
     public boolean drinkHPpotion()
     {
     	if(this.hpPotionCooltime<=0) this.hpPotionCooltime = 2;
@@ -191,4 +197,20 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 	}
 	public abstract void buffskill();
 	public abstract void buffRelease();
+	public int getSkill_Cooltime1() {
+		return skill_Cooltime1;
+	}
+	public void setSkill_Cooltime1(int skill_Cooltime1) {
+		this.skill_Cooltime1 = skill_Cooltime1;
+	}
+	public int getSkill_Cooltime2() {
+		return skill_Cooltime2;
+	}
+
+	public void setSkill_Cooltime2(int skill_Cooltime2) {
+		this.skill_Cooltime2 = skill_Cooltime2;
+	}
+	public Weapon getW() {
+		return w;
+	}
 }
