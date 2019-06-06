@@ -27,14 +27,16 @@ public class ÆÈ¶óµò extends Àü»ç {
 	
 	@Override
 	public void buffskill() {
-		// TODO Auto-generated method stub
+		this.def *=1.5;
+		enemy.def*=0.75;
 		
 	}
 
 	@Override
-	public void buffRealease() {
-		// TODO Auto-generated method stub
-
+	public void buffRelease() {
+		this.def /=1.5;
+		enemy.def/=0.75;
+		
 	}
 
 

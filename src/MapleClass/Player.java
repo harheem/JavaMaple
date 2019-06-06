@@ -1,16 +1,17 @@
 package MapleClass;
 
 import Maple.Attackable;
+import Maple.Buffable;
 import Maple.Reinforcable;
 import MapleWeapon.Weapon;
 
-public abstract class Player implements Attackable, Reinforcable {
+public abstract class Player implements Attackable, Reinforcable, Buffable{
 	protected String name;
 	protected int hp;
 	protected int mp;
-	protected int def;
+	protected double def;
 	protected int point = 1;
-	protected int power;
+	protected double power;
 	protected int m_hp;
 	protected int m_mp;
 	protected int buffTime;
@@ -18,6 +19,7 @@ public abstract class Player implements Attackable, Reinforcable {
 	protected int buffSkillMp;
     protected int hpPotionCooltime;
     protected int mpPotionCooltime;
+    protected Player enemy;
     protected Weapon w;
 
     public boolean drinkHPpotion()
@@ -52,23 +54,25 @@ public abstract class Player implements Attackable, Reinforcable {
     	return true;
     }
 
-	public void attack(Player enemy) {
+	public void attack(Player p) {
+		this.setEnemy(p);
 		w.attack(enemy);
 		if(enemy instanceof 마법사) enemy.passive(this.power - enemy.def/100);
-		else enemy.hp -= (this.power - enemy.def/100);
+		else enemy.hp -= (this.power /(enemy.def/100));
 		System.out.println("가한 데미지 : " + (this.power - enemy.def/100));
 		System.out.println("적 남은 체력 :" +enemy.hp);
 	}
 
-	public void skillAttack(Player enemy, int skillNum) {
+	public void skillAttack(Player p, int skillNum) {
+		this.setEnemy(p);
 		System.out.println(this.name + "의 " + w.getSkillName()[skillNum] + "!");
-		int damage = (this.power*(w.getSkillPower()[skillNum]/10) - enemy.def/100);
+		double damage = (this.power*(w.getSkillPower()[skillNum]/10) - enemy.def/100);
 		if(enemy instanceof 마법사) enemy.passive(this.power - enemy.def/100);
 		else enemy.hp -= damage;
 		System.out.println("가한 데미지 : " + damage);
 		System.out.println("적 남은 체력 :" +enemy.hp);
 	}
-	public void passive(int realDamage) { 
+	public void passive(double realDamage) { 
 		//마법사 메서드에서만 오버라이딩
 	}
 	
@@ -97,7 +101,7 @@ public abstract class Player implements Attackable, Reinforcable {
 		this.mp = mp;
 	}
 
-	public int getDef() {
+	public double getDef() {
 		return def;
 	}
 
@@ -113,7 +117,7 @@ public abstract class Player implements Attackable, Reinforcable {
 		this.point = point;
 	}
 
-	public int getPower() {
+	public double getPower() {
 		return power;
 	}
 
@@ -177,4 +181,13 @@ public abstract class Player implements Attackable, Reinforcable {
 		this.mpPotionCooltime = mpPotionCooltime;
 	}
 
+	public Player getEnemy() {
+		return enemy;
+	}
+
+	public void setEnemy(Player enemy) {
+		this.enemy = enemy;
+	}
+	public abstract void buffskill();
+	public abstract void buffRelease();
 }

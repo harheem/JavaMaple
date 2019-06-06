@@ -3,7 +3,7 @@ package MapleClass;
 import Maple.Buffable;
 
 public abstract class 도적 extends Player implements Buffable {
-	protected int initial_power;
+	protected double initial_power;
 	public 도적() {
 		this.m_hp = 750;
 		this.m_mp = 750;
@@ -15,13 +15,13 @@ public abstract class 도적 extends Player implements Buffable {
 		// 쉐도우 파트너라는 스킬은 그림자 분신을 만들어서 공격을 두번 하는 스킬입니다
 		// 60퍼 만큼의 추가데미지를 입히는 쪽으로 (두번 공격하는 이미지면 더 좋을것같습니다)
 		// 2턴 지속됩니다
-		this.power *= 1.6;
+		this.power *= 1.3;
 		// 두번 공격하는 의미로 나눠놨습니다
 		this.buffTime = 2;
 	}
 
 	@Override
-	public void buffRealease() {
+	public void buffRelease() {
 		this.power = initial_power;
 	}
 }

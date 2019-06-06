@@ -9,11 +9,7 @@ public class ½ãÄİ extends ¸¶¹ı»ç {
 		this.name = "½ãÄİ";
 	}
 
-	@Override
-	public void attack(Player p) {
-		// TODO Auto-generated method stub
 
-	}
 
 	@Override
 	public void reinforce() {

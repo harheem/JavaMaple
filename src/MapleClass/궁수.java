@@ -3,7 +3,7 @@ package MapleClass;
 import Maple.Buffable;
 
 public abstract class 궁수 extends Player implements Buffable {
-	protected int initial_power;
+	protected double initial_power;
 	public 궁수() {
 		this.m_hp = 750;
 		this.m_mp = 750;
@@ -22,7 +22,7 @@ public abstract class 궁수 extends Player implements Buffable {
 		}
 
 	}
-	public void buffRealease() {
+	public void buffRelease() {
 		this.power = initial_power; // power/=1.3 해도 되는데 버프 실행 해제과정에서 오류 생길까봐 이렇게 해놓을게요
 	}
 

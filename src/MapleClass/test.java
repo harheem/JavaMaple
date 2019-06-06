@@ -3,14 +3,17 @@ package MapleClass;
 public class test {
 	
 	public static void main(String[] args) {
-		신궁 a = new 신궁();
-		나이트로드 b = new 나이트로드();
-		Player c = new 불독();
+		Player a = new 팔라딘();
+		Player b = new 나이트로드();
+		a.setEnemy(b);
+		a.buffskill();
+		b.setEnemy(a);
 		b.attack(a);
-		b.skillAttack(a, 0);
-		b.attack(c);
+		b.skillAttack(a,0);
+		b.attack(a);
 		a.setHp(500);
-		b.skillAttack(a, 0);
+		a.setEnemy(b);
+		a.skillAttack(b,0);
 		a.drinkHPpotion();
 	}
 

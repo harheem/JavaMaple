@@ -39,7 +39,7 @@ public class 다크나이트 extends 전사 {
 	}
 
 	@Override
-	public void buffRealease() {
+	public void buffRelease() {
 		this.m_hp = initial_m_hp;
 		this.m_mp = initial_m_mp;
 		if (this.hp > this.m_hp)
