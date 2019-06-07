@@ -1,5 +1,7 @@
 package MapleView;
 
+import control.UserDataList;
+
 public class Main {
 
 	public static final int SCREEN_WIDTH = 1280;
@@ -7,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		//login class 
-		new Login();
+		new Login(new UserDataList());
 		//if(lg.getS() = true){
 		SelectView sv = new SelectView();
 		switch(sv.getIndex()) {
