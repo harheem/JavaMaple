@@ -1,5 +1,7 @@
 package MapleClass;
 
+import java.util.ArrayList;
+
 import Maple.Attackable;
 import Maple.Buffable;
 import Maple.Reinforcable;
@@ -23,12 +25,15 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
     protected int skill_Cooltime2;
     protected Player enemy;
     protected Weapon w;
+    protected ArrayList<String> imageIcon = new ArrayList<String>();
+    //플레이어 선택, 상대, 플레이어 배틀, 상대
     public Player()
     {
     	skill_Cooltime1 = 3;
     	skill_Cooltime2 = 10;
     }
     public boolean drinkHPpotion()
+    
     {
     	if(this.hpPotionCooltime<=0) this.hpPotionCooltime = 2;
     	else 

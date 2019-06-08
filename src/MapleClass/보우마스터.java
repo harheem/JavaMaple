@@ -10,6 +10,10 @@ public class 보우마스터 extends 궁수 {
 		this.power = (150 + point * 5) + + w.getWpPower()[w.getWpIndex()];
 		this.def = (130 + point * 5);
 		this.initial_power=power;
+		imageIcon.add("../image/player/BowMaster_p.png");
+		imageIcon.add("../image/player/BowMaster_e.png");
+		imageIcon.add("../image/player/m/BowMaster_p.png");
+		imageIcon.add("../image/player/m/BowMaster_e.png");
 
 	}
 	public void reinforce() {

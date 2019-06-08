@@ -12,6 +12,9 @@ public abstract class Weapon implements Attackable, Reinforcable {
 	protected int skillNum;
 	protected int wpIndex = 0;
 	protected int[] skillPower;
+	//플레이어의 무기,스킬아이콘1,2 플레이어의 스킬1이펙트, 스킬2이펙트, 버프,버프이펙트 
+	//상대꺼도..
+	protected String[] imageIcon;
 
 	@Override
 	public void attack() {

@@ -10,6 +10,10 @@ public class ½Å±Ã extends ±Ã¼ö {
 		this.power = (150 + point * 5) + w.getWpPower()[w.getWpIndex()];
 		this.def = (130 + point * 5);
 		this.initial_power=power;
+		imageIcon.add("../image/player/Marksman_p.png");
+		imageIcon.add("../image/player/Marksman_e.png");
+		imageIcon.add("../image/player/m/Marksman_p.png");
+		imageIcon.add("../image/player/m/Marksman_e.png");
 	}
 
 	@Override

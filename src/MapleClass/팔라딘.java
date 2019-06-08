@@ -11,6 +11,10 @@ public class ÆÈ¶óµò extends Àü»ç {
 		this.def = 180;
 		this.buffSkillName = "À§Çù";
 		this.buffSkillMp = 30; // À§Çù ¼Ò¸ðÇÒ mp
+		imageIcon.add("../image/player/Paladin_p.png");
+		imageIcon.add("../image/player/Paladin_e.png");
+		imageIcon.add("../image/player/m/Paladin_p.png");
+		imageIcon.add("../image/player/m/Paladin_e.png");
 	}
 
 

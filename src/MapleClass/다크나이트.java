@@ -16,6 +16,10 @@ public class 다크나이트 extends 전사 {
 		this.buffSkillMp = 30; // 하이퍼바디 소모할 mp
 		this.initial_m_hp = m_hp;
 		this.initial_m_mp = m_mp;
+		imageIcon.add("../image/player/Darknight_p.png");
+		imageIcon.add("../image/player/Darknight_e.png");
+		imageIcon.add("../image/player/m/Darknight_p.png");
+		imageIcon.add("../image/player/m/Darknight_e.png");
 	}
 
 	@Override

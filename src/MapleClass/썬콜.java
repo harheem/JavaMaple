@@ -9,6 +9,10 @@ public class ½ãÄÝ extends ¸¶¹ý»ç {
 		this.name = "½ãÄÝ";
     	this.power = 160 + w.getWpPower()[w.getWpIndex()];
     	this.def = 120;
+		imageIcon.add("../image/player/IceLightning_p.png");
+		imageIcon.add("../image/player/IceLightning_e.png");
+		imageIcon.add("../image/player/m/IceLightning_p.png");
+		imageIcon.add("../image/player/m/IceLightning_e.png");
 	}
 
 	@Override

@@ -31,13 +31,13 @@ public class Login extends JFrame {
 	private Graphics screenGraphic;
 	
 	//배경이미지와 버튼아이콘이미지
-	private Image logInBackground = new ImageIcon(Main.class.getResource("../image/mapleLogin.jpg")).getImage();
-	private ImageIcon logInButton = new ImageIcon(Main.class.getResource("../image/loginButton.png"));
-	private ImageIcon idButton = new ImageIcon(Main.class.getResource("../image/idButton.png"));
-	private ImageIcon pageButton = new ImageIcon(Main.class.getResource("../image/pageButton.png"));
-	private ImageIcon exid = new ImageIcon(Main.class.getResource("../image/exid.png"));
-	private ImageIcon findID = new ImageIcon(Main.class.getResource("../image/findID.png"));
-	private ImageIcon findPW = new ImageIcon(Main.class.getResource("../image/findPW.png"));
+	private Image logInBackground = new ImageIcon(Main.class.getResource("../image/login/mapleLogin.jpg")).getImage();
+	private ImageIcon logInButton = new ImageIcon(Main.class.getResource("../image/login/loginButton.png"));
+	private ImageIcon idButton = new ImageIcon(Main.class.getResource("../image/login/idButton.png"));
+	private ImageIcon pageButton = new ImageIcon(Main.class.getResource("../image/login/pageButton.png"));
+	private ImageIcon exid = new ImageIcon(Main.class.getResource("../image/login/exid.png"));
+	private ImageIcon findID = new ImageIcon(Main.class.getResource("../image/login/findID.png"));
+	private ImageIcon findPW = new ImageIcon(Main.class.getResource("../image/login/findPW.png"));
 
 	private JTextField tf_id, tf_pw;
 	private JButton log_in, create_acc, homepage, exit, search_id, search_pw;
@@ -183,7 +183,7 @@ class MembershipView extends JFrame {
 
 	private Image screenImage;
 	private Graphics screenGraphic;
-	private Image logInBackground = new ImageIcon(Main.class.getResource("../image/membership.jpg")).getImage();
+	private Image logInBackground = new ImageIcon(Main.class.getResource("../image/login/membership.jpg")).getImage();
 	private JTextField textField, textField_1, textField_2, textField_3, textField_4;
 	private JLabel label_2, lblNewLabel, lbl_3, lblName, lblBirthdate;
 
@@ -201,7 +201,7 @@ class MembershipView extends JFrame {
 		makeTextField();
 
 		JButton btnNewButton = new JButton();
-		btnNewButton.setIcon(new ImageIcon(Main.class.getResource("../image/makeID.png")));
+		btnNewButton.setIcon(new ImageIcon(Main.class.getResource("../image/login/makeID.png")));
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setContentAreaFilled(false);
 		btnNewButton.setFocusPainted(false);
@@ -295,7 +295,7 @@ class MembershipView extends JFrame {
 class IDSearchView extends JFrame {
 	private Image screenImage;
 	private Graphics screenGraphic;
-	private Image logInBackground = new ImageIcon(Main.class.getResource("../image/membership.jpg")).getImage();
+	private Image logInBackground = new ImageIcon(Main.class.getResource("../image/login/membership.jpg")).getImage();
 	private JTextField textField, textField_1;
 	private JLabel label_2, lblNewLabel;
 
@@ -314,7 +314,7 @@ class IDSearchView extends JFrame {
 
 		// 찾기버튼
 		JButton btnNewButton = new JButton("ID찾기");
-		btnNewButton.setIcon(new ImageIcon(Main.class.getResource("../image/id_found.png")));
+		btnNewButton.setIcon(new ImageIcon(Main.class.getResource("../image/login/id_found.png")));
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setContentAreaFilled(false);
 		btnNewButton.setFocusPainted(false);
@@ -340,7 +340,7 @@ class IDSearchView extends JFrame {
 		JButton exit = new JButton();
 		
 		exit.setBounds(285, 130, 105, 100);
-		exit.setIcon(new ImageIcon(Main.class.getResource("../image/exitButton.png")));
+		exit.setIcon(new ImageIcon(Main.class.getResource("../image/login/exitButton.png")));
 		exit.setBorderPainted(false);
 		exit.setContentAreaFilled(false);
 		exit.setFocusPainted(false);
@@ -399,7 +399,7 @@ class PWSearchView extends JFrame {
 
 	private Image screenImage;
 	private Graphics screenGraphic;
-	private Image logInBackground = new ImageIcon(Main.class.getResource("../image/membership.jpg")).getImage();
+	private Image logInBackground = new ImageIcon(Main.class.getResource("../image/login/membership.jpg")).getImage();
 	private JTextField textField, textField_1, textField_2;
 	private JLabel lblNewLabel, lblName, lblBirthdate;
 
@@ -417,7 +417,7 @@ class PWSearchView extends JFrame {
 		makeTextField();
 
 		JButton btnNewButton = new JButton();
-		btnNewButton.setIcon(new ImageIcon(Main.class.getResource("../image/pw_found.png")));
+		btnNewButton.setIcon(new ImageIcon(Main.class.getResource("../image/login/pw_found.png")));
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setContentAreaFilled(false);
 		btnNewButton.setFocusPainted(false);
@@ -440,7 +440,7 @@ class PWSearchView extends JFrame {
 		});
 		// 나가기
 		JButton exit = new JButton();
-		exit.setIcon(new ImageIcon(Main.class.getResource("../image/exitButton.png")));
+		exit.setIcon(new ImageIcon(Main.class.getResource("../image/login/exitButton.png")));
 		exit.setBorderPainted(false);
 		exit.setContentAreaFilled(false);
 		exit.setFocusPainted(false);
