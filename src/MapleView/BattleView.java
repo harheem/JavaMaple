@@ -24,7 +24,7 @@ public class BattleView extends JFrame {
 		add(p1);
 		add(p2);
 		add(w1);
-		add(w1;)
+		add(w2);
 		
 		
 		//체력바,마나바 구현 프로그레스바 직접 붙이기

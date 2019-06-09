@@ -13,6 +13,8 @@ public class PlayerButton extends JButton implements ActionListener{
 	
 	public PlayerButton(Player p) {
 		this.p = p;
+		this.setBounds(180, 220, 150, 180);
+
 		//플레이어가 이미지경로 갖고 있게해서 이미지아이콘 설정
 	}
 

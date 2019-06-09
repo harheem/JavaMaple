@@ -1,21 +1,28 @@
 package MapleView;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JButton;
+
+import MapleClass.Player;
+
 public class MpButton extends JButton implements MouseListener{
 
 	private Player p;
 	
 	public MpButton(Player player) {
-		this.p=player
+		this.p=player;
 	}
 	
 	public void addAction() {
-		MpButton.addMouseListener(this);
+		this.addMouseListener(this);
 		
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-			this.p.drinkMpPotion();
+			this.p.drinkMPpotion();
 			
 	}
 

@@ -1,7 +1,7 @@
 package MapleView;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
@@ -11,12 +11,17 @@ public class SkillButton1 extends JButton implements MouseListener{
 
 	private Player p;
 	
-	public SkillButton1(Player player) {
-		this.p=player
+	public SkillButton1(Player p) { //player의 SkillButton1
+		this.p = p;
+		this.setBounds(80, 320, 65, 35);
 	}
+	public SkillButton1 () { //enemy는 버튼의 실질적인 기능이 없어 객체x
+		this.setBounds(680, 320, 65, 35);	
+	}
+
 	
 	public void addAction() {
-		MpButton.addMouseListener(this);
+		this.addMouseListener(this);
 		
 	}
 

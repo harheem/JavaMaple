@@ -1,7 +1,7 @@
 package MapleView;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
@@ -12,11 +12,16 @@ public class SkillButton2 extends JButton implements MouseListener{
 	private Player p;
 	
 	public SkillButton2(Player player) {
-		this.p=player
+		this.p=player;
+		this.setBounds(80, 355, 65, 35);
+
 	}
-	
+	public SkillButton2() { 
+		this.setBounds(680, 355, 65, 35);
+	}
+
 	public void addAction() {
-		MpButton.addMouseListener(this);
+		this.addMouseListener(this);
 		
 	}
 
