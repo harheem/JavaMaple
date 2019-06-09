@@ -7,9 +7,9 @@ public class ¼¨µµ¾î extends µµÀû {
 	public ¼¨µµ¾î() {
 		this.w = new ´Ü°Ë();
 		this.name = "¼¨µµ¾î";
-		this.power = 160+ w.getWpPower()[w.getWpIndex()];
+		this.power = 150+ w.getWpPower()[w.getWpIndex()];
 		this.initial_power = this.power;
-		this.def = 140;
+		this.def = 130;
 		imageIcon.add("../image/player/Shadower_p.png");
 		imageIcon.add("../image/player/Shadower_e.png");
 		imageIcon.add("../image/player/m/Shadower_p.png");

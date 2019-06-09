@@ -7,9 +7,9 @@ public class 나이트로드 extends 도적 {
 	public 나이트로드() {
 		this.w = new 아대();
 		this.name = "나이트로드";
-		this.power = 160 + w.getWpPower()[w.getWpIndex()];
+		this.power = 150 + w.getWpPower()[w.getWpIndex()];
 		this.initial_power = this.power;
-		this.def = 140;
+		this.def = 130;
 		imageIcon.add("../image/player/NightLord_p.png");
 		imageIcon.add("../image/player/NightLord_e.png");
 		imageIcon.add("../image/player/m/NightLord_p.png");
