@@ -72,7 +72,7 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 		if(enemy instanceof 마법사) enemy.passive(damage);
 		else enemy.hp -= damage;
 		System.out.println("가한 데미지 : " + damage);
-		System.out.println("적 남은 체력 :" +enemy.hp);
+		System.out.println("적 남은 체력 :" + Math.max(0, enemy.hp));
 		this.buffTime--;
 	}
 
@@ -82,7 +82,7 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 		if(enemy instanceof 마법사) enemy.passive(damage);
 		else enemy.hp -= damage;
 		System.out.println("가한 데미지 : " + damage);
-		System.out.println("적 남은 체력 :" +enemy.hp);
+		System.out.println("적 남은 체력 :" +Math.max(0,enemy.hp));
 		this.buffTime--;
 	}
 	public void passive(double realDamage) { 
