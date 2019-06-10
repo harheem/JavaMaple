@@ -17,13 +17,13 @@ public abstract class 궁수 extends Player implements Buffable {
 			return;
 		else {
 			this.mp -= this.buffSkillMp;
-			this.power*=1.25; //공격력 30%강화
+			this.power*=1.25; //공격력 25%강화
 			this.buffTime = 3;
 		}
 
 	}
 	public void buffRelease() {
-		this.power = initial_power; // power/=1.3 해도 되는데 버프 실행 해제과정에서 오류 생길까봐 이렇게 해놓을게요
+		this.power = initial_power; // power/=1.25 해도 되는데 버프 실행 해제과정에서 오류 생길까봐 이렇게 해놓을게요
 	}
 
 }

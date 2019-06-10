@@ -9,6 +9,9 @@ public class 활 extends Weapon {
 		this.skillName = new String[] { "언카운터블 애로우", "애로우 플래터" };
 		this.skillMP = new int[] { 30, 90 };
 		this.skillPower = new int[] { 20, 50 };
+		wpIcon.add("../image/wp/BowMasterWeapon1.png");
+		wpIcon.add("../image/wp/BowMasterWeapon2.png");
+		wpIcon.add("../image/wp/BowMasterWeapon3.png");
 	}
 
 }

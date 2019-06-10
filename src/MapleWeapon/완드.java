@@ -9,6 +9,9 @@ public class 완드 extends Weapon {
 		this.skillName = new String[] { "페럴라이즈", "메테오" };
 		this.skillMP = new int[] { 50, 150 };
 		this.skillPower = new int[] { 20, 50 };
+		wpIcon.add("../image/wp/FireWeapon1.png");
+		wpIcon.add("../image/wp/FireWeapon2.png");
+		wpIcon.add("../image/wp/FireWeapon3.png");
 	}
 
 

@@ -9,6 +9,10 @@ public class 창 extends Weapon {
 		this.skillName = new String[] { "다크임페일", "궁그닐 디센트" };
 		this.skillMP = new int[] { 20, 60 };
 		this.skillPower = new int[] { 20, 50 };
+		wpIcon.add("../image/wp/DarkKnightWeapon1.png");
+		wpIcon.add("../image/wp/DarkKnightWeapon2.png");
+		wpIcon.add("../image/wp/DarkKnightWeapon3.png");
+
 	}
 
 }
