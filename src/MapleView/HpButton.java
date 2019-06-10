@@ -11,8 +11,14 @@ public class HpButton extends JButton implements MouseListener{
 
 	private Player p;
 	
-	public HpButton(Player player) {
+	public HpButton(Player player) { //hp, mp 버튼이 스킬1,2 버튼처럼 위아래로 붙어있다는 가정하에 만듬
 		this.p=player;
+		HpButton hb = new HpButton(p);
+	    hb.setBounds(220, 400, 75, 35);
+	} 
+	public HpButton() {
+	    HpButton hb = new HpButton();
+	    hb.setBounds(630, 400, 75, 35); //적 hp버튼
 	}
 	
 	public void addAction() {
