@@ -15,6 +15,7 @@ public class EnemyButton extends JButton {
 		this.p = p;
 		this.setBounds(600, 220, 150, 180);
 		//플레이어가 이미지경로 갖고 있게해서 이미지아이콘 설정
+		//자동으로 쓰레드가 돌아가게 
 	}
 
 

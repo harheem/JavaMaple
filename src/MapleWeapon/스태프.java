@@ -13,6 +13,17 @@ public class 스태프 extends Weapon {
 		wpIcon.add("../image/wp/ThunderWeapon1.png");
 		wpIcon.add("../image/wp/ThunderWeapon2.png");
 		wpIcon.add("../image/wp/ThunderWeapon3.png");
+		//스킬아이콘과 버프 아이콘 이미지경로
+		skillIcon.add("../image/skillIcon/ThunderSkill1.png");
+		skillIcon.add("../image/skillIcon/ThunderSkill2.png");
+		skillIcon.add("../image/skillIcon/WizardBuff.png");
+		//스킬이펙트 플레이어 스킬 2개, 상대스킬 2개 버프 플레이어, 상대꺼
+		skillEffect.add("../image/skilleffect/ThunderSkill1Effect.png");
+		skillEffect.add("../image/skilleffect/ThunderSkill2Effect.png");
+		skillEffect.add("../image/skilleffect_e/ThunderSkill1Effect.png");
+		skillEffect.add("../image/skilleffect_e/ThunderSkill2Effect.png");
+		skillEffect.add("../image/skilleffect/WizardBuffEffect_p.png");
+		skillEffect.add("../image/skilleffect_e/WizardBuffEffect.png");
 	}
 
 

@@ -12,5 +12,16 @@ public class 아대 extends Weapon {
 		wpIcon.add("../image/wp/NightLordWeapon1.png");
 		wpIcon.add("../image/wp/NightLordWeapon2.png");
 		wpIcon.add("../image/wp/NightLordWeapon3.png");
+		//스킬아이콘과 버프 아이콘 이미지경로
+		skillIcon.add("../image/skillIcon/NightLordSkill1.png");
+		skillIcon.add("../image/skillIcon/NightLordSkill2.png");
+		skillIcon.add("../image/skillIcon/ThiefBuff.png");
+		//스킬이펙트 플레이어 스킬 2개, 상대스킬 2개 버프 플레이어, 상대꺼
+		skillEffect.add("../image/skilleffect/NightLordSkill1Effect.png");
+		skillEffect.add("../image/skilleffect/NightLordSkill2Effect.png");
+		skillEffect.add("../image/skilleffect_e/NightLordSkill1Effect.png");
+		skillEffect.add("../image/skilleffect_e/NightLordSkill2Effect.png");
+		skillEffect.add("../image/skilleffect/ThiefBuffEffect_p.png");
+		skillEffect.add("../image/skilleffect_e/ThiefBuffEffect.png");
 	}
 }

@@ -12,6 +12,18 @@ public class 창 extends Weapon {
 		wpIcon.add("../image/wp/DarkKnightWeapon1.png");
 		wpIcon.add("../image/wp/DarkKnightWeapon2.png");
 		wpIcon.add("../image/wp/DarkKnightWeapon3.png");
+		//스킬아이콘과 버프 아이콘 이미지경로
+		skillIcon.add("../image/skillIcon/DarkKnightSkill1.png");
+		skillIcon.add("../image/skillIcon/DarkKnightSkill2.png");
+		skillIcon.add("../image/skillIcon/DarkKnightBuff.png");
+		//스킬이펙트 플레이어 스킬 2개, 상대스킬 2개 버프 플레이어, 상대꺼
+		skillEffect.add("../image/skilleffect/DarkKnightSkill1Effect.png");
+		skillEffect.add("../image/skilleffect/DarkKnightSkill2Effect.png");
+		skillEffect.add("../image/skilleffect_e/DarkKnightSkill1Effect.png");
+		skillEffect.add("../image/skilleffect_e/DarkKnightSkill2Effect.png");
+		skillEffect.add("../image/skilleffect/DarkKnightBuffEffect_p.png");
+		skillEffect.add("../image/skilleffect_e/DarkKnightBuffEffect.png");
+		
 
 	}
 
