@@ -1,5 +1,7 @@
 package MapleWeapon;
 
+import java.util.ArrayList;
+
 import Maple.Attackable;
 import Maple.Reinforcable;
 import MapleClass.Player;
@@ -12,9 +14,9 @@ public abstract class Weapon implements Attackable, Reinforcable {
 	protected int skillNum;
 	protected int wpIndex = 0;
 	protected int[] skillPower;
-	//플레이어의 무기,스킬아이콘1,2 플레이어의 스킬1이펙트, 스킬2이펙트, 버프,버프이펙트 
-	//상대꺼도..
-	protected String[] imageIcon;
+    protected ArrayList<String> wpIcon = new ArrayList<String>(); 	//플레이어의 무기 아이콘 3개
+    protected ArrayList<String> skillIcon = new ArrayList<String>(); 	//스킬아이콘 2개 버프아이콘 1개
+    protected ArrayList<String> skillEffect = new ArrayList<String>();	//스킬이펙트 2개 버프이펙트 1개 상대꺼까지 해서 총 6개
 
 	@Override
 	public void attack() {
@@ -25,6 +27,30 @@ public abstract class Weapon implements Attackable, Reinforcable {
 	public void reinforce() {
 		System.out.println(wpName[wpIndex - 1] + " -> " + wpName[wpIndex]);
 		System.out.println(wpPower[wpIndex - 1] + " -> " + wpPower[wpIndex]);
+	}
+
+	public ArrayList<String> getWpIcon() {
+		return wpIcon;
+	}
+
+	public void setWpIcon(ArrayList<String> wpIcon) {
+		this.wpIcon = wpIcon;
+	}
+
+	public ArrayList<String> getSkillIcon() {
+		return skillIcon;
+	}
+
+	public void setSkillIcon(ArrayList<String> skillIcon) {
+		this.skillIcon = skillIcon;
+	}
+
+	public ArrayList<String> getSkillEffect() {
+		return skillEffect;
+	}
+
+	public void setSkillEffect(ArrayList<String> skillEffect) {
+		this.skillEffect = skillEffect;
 	}
 
 	public String[] getWpName() {

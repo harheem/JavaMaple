@@ -9,6 +9,9 @@ public class ´Ü°Ë extends Weapon {
 		this.skillName = new String[] { "ºÎ¸Þ¶û½ºÅÜ", "¾Ï»ì" };
 		this.skillMP = new int[] { 30, 90 };
 		this.skillPower = new int[] { 20, 50 };
+		wpIcon.add("../image/wp/ShadwerWeapon1.png");
+		wpIcon.add("../image/wp/ShadwerWeapon2.png");
+		wpIcon.add("../image/wp/ShadwerWeapon3.png");
 	}
 
 }
