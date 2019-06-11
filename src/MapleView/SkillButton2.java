@@ -13,11 +13,11 @@ public class SkillButton2 extends JButton implements MouseListener{
 	
 	public SkillButton2(Player player) {
 		this.p=player;
-		this.setBounds(80, 355, 65, 35);
-
+		this.setSize(65, 35);
+		this.addAction();
 	}
-	public SkillButton2() { 
-		this.setBounds(680, 355, 65, 35);
+	
+	public SkillButton2 () {
 	}
 
 	public void addAction() {

@@ -1,37 +1,66 @@
 package MapleView;
 
+import java.awt.Component;
+
 import javax.swing.JFrame;
+import javax.swing.JProgressBar;
 
 import MapleClass.Player;
 
-public class BattleView extends JFrame {
-	
 
+public class BattleView extends JFrame { //View에선 버튼의 생성과 추가 및 Location 설정. Button에서 버튼의 사이즈 및 아이콘 설정.
 	
-	public BattleView(Player p, Player e) {
-		SkillButton1 sb1 = new SkillButton1(p);
-		SkillButton2 sb2 = new SkillButton2(p);
-		MpButton mb1 = new MpButton(p);
-		HpButton hb1 = new HpButton(p);
-		PlayerButton p1 = new PlayerButton(p);
-		EnemyButton p2 = new EnemyButton(e);
-		WeaponButton w1 = new WeaponButton(p);
-		WeaponButton w2 = new WeaponButton(e);
-		add(sb1);
-		add(sb2);
-		add(mb1);
-		add(hb1);
-		add(p1);
-		add(p2);
-		add(w1);
-		add(w2);
+		SkillButton1 sb1; SkillButton2 sb2; MpButton mb; HpButton hb; PlayerButton p1;
+		EnemyButton p2; WeaponButton w1, w2; JProgressBar pHp, pMp, eHp, eMp;
+		private Component[] cpns = {sb1,sb2,mb,hb,p1,p2,w1,w2,pHp,pMp,eHp,eMp};
 		
-		
-		//체력바,마나바 구현 프로그레스바 직접 붙이기
+	public BattleView(Player p, Player e) { // 사용자 : p , 적 : e. 교수님이 좋아하시는 생성자 구성
+		this.creator(p, e);
+		this.setValue(p, e);
+		this.cpnsSetLocation();
+		this.cpnsAdd();
 	}
 	
-
-
+	public void creator(Player p, Player e) {
+		this.sb1 = new SkillButton1(p);
+		this.sb2 = new SkillButton2(p);
+		this.mb = new MpButton(p);
+		this.hb = new HpButton(p);
+		this.p1 = new PlayerButton(p);
+		this.p2 = new EnemyButton(e);
+		this.w1 = new WeaponButton(p);
+		this.w2 = new WeaponButton(e);
+		this.pHp=new JProgressBar(0,p.getHp()); //플레이어 hp
+		this.pMp=new JProgressBar(0,p.getMp()); // " mp
+		this.eHp=new JProgressBar(0,e.getHp()); //적 hp
+		this.eMp=new JProgressBar(0,e.getMp()); // " mp
+	}
 	
+	public void setValue(Player p, Player e) {
+		this.pHp.setValue(p.getHp());
+		this.pMp.setValue(p.getMp());
+		this.eHp.setValue(e.getHp());
+		this.eMp.setValue(e.getMp());
+	}
+	
+	public void cpnsAdd() {
+		for(int i=0;i<this.cpns.length;i++)
+			add(this.cpns[i]);
+	}
+	
+	public void cpnsSetLocation() {
+		this.sb1.setLocation(80,320);
+		this.sb2.setLocation(80,355);
+		this.hb.setLocation(250,300);
+		this.mb.setLocation(300,300);
+		this.p1.setLocation(180, 220);
+		this.p2.setLocation(600, 220);
+		this.w1.setLocation(100, 425);
+		this.w2.setLocation(660, 425);
+		this.pHp.setLocation(220,400);
+		this.pHp.setLocation(220,435);
+		this.eHp.setLocation(630,400);
+		this.eHp.setLocation(630,435);
+	}
 
 }

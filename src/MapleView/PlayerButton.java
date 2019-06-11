@@ -7,13 +7,13 @@ import javax.swing.JButton;
 
 import MapleClass.Player;
 
-public class PlayerButton extends JButton implements ActionListener{
+public class PlayerButton extends JButton implements ActionListener{ // ActionListener 기능 필요하신가요? 필요없으면 삭제바랍니다!
 	
 	Player p;
 	
 	public PlayerButton(Player p) {
 		this.p = p;
-		this.setBounds(180, 220, 150, 180);
+		this.setSize(150, 180);
 
 		//플레이어가 이미지경로 갖고 있게해서 이미지아이콘 설정
 	}

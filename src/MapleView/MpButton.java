@@ -11,15 +11,14 @@ public class MpButton extends JButton implements MouseListener{
 
 	private Player p;
 	
-	public MpButton(Player player) {//hp, mp버튼이 위아래로 붙어있다는 가정하에 만듦
+	public MpButton(Player player) {
 		this.p=player;
-		MpButton mb = new MpButton(p);
-	    mb.setBounds(220, 435, 75, 35);
+	    this.setSize(65, 35);
+	    this.addAction();
 	}
 	    
 	public MpButton() {
-	    MpButton mb = new MpButton();
-	    mb.setBounds(630, 435, 75, 35); //적 mp버튼
+	    this.setSize(65, 35);
 	}
 	
 	public void addAction() {

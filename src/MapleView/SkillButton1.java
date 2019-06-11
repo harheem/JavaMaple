@@ -13,12 +13,12 @@ public class SkillButton1 extends JButton implements MouseListener{
 	
 	public SkillButton1(Player p) { //player의 SkillButton1
 		this.p = p;
-		this.setBounds(80, 320, 65, 35);
+		this.setSize(65, 35);
+		this.addAction();
 	}
-	public SkillButton1 () { //enemy는 버튼의 실질적인 기능이 없어 객체x
-		this.setBounds(680, 320, 65, 35);	
+	
+	public SkillButton1 () {
 	}
-
 	
 	public void addAction() {
 		this.addMouseListener(this);
