@@ -10,12 +10,22 @@ public class Main {
 
 	public static void main(String[] args) {
 		//login class 
-		new Login(new UserDataList());
+		Login lg = new Login(new UserDataList());
+		while(true)
+		{
+			if(lg.isVisible()) System.out.print("");
+			else break;
+		}
 		//if(lg.getS() = true){
 		SelectView sv = new SelectView();
+		while(true)
+		{
+			if(sv.isVisible()) System.out.print("");
+			else break;
+		}
 		switch(sv.getIndex()) {
 		case 1: //ÆÈ¶óµò °´Ã¼¸¦ »ý¼º
-			//p1
+			//p11
 		}
 		new BattleView(new ´ÙÅ©³ªÀÌÆ®(), new ÆÈ¶óµò());
 		//Àû °´Ã¼¸¦ ·£´ýÀ¸·Î »ý¼º
