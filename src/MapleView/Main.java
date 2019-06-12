@@ -1,6 +1,5 @@
 package MapleView;
 
-import MapleClass.*;
 import control.UserDataList;
 
 public class Main {
@@ -17,7 +16,6 @@ public class Main {
 		case 1: //ÆÈ¶óµò °´Ã¼¸¦ »ý¼º
 			//p1
 		}
-		new BattleView(new ´ÙÅ©³ªÀÌÆ®(), new ÆÈ¶óµò());
 		//Àû °´Ã¼¸¦ ·£´ýÀ¸·Î »ý¼º
 		//e
 		// new BattleView(p1, e)
