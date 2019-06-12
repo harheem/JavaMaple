@@ -22,6 +22,8 @@ public class SelectButton extends JButton implements MouseListener{ //View¿¡¼± ¹
 			this.imgButton[i].setIcon(~~);
 			this.nameButton[i].setIcon(~~);
 			*/
+			this.imgButton[i] = new JButton();
+			this.nameButton[i] = new JButton();
 			this.imgButton[i].setSize(150,150);
 			this.nameButton[i].setSize(100,30);
 		}
