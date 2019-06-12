@@ -19,73 +19,43 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 	protected int buffTime;
 	protected String buffSkillName;
 	protected int buffSkillMp;
-    protected int hpPotionCooltime;
-    protected int mpPotionCooltime;
-    protected int skill_Cooltime1;
-    protected int skill_Cooltime2;
     protected Player enemy;
     protected Weapon w;
     protected ArrayList<String> imageIcon = new ArrayList<String>();
     //플레이어이미지 1.나, 2.상대, 미니플레이어 3.나, 4.상대
     public Player()
     {
-    	skill_Cooltime1 = 3;
-    	skill_Cooltime2 = 10;
     }
-    public boolean drinkHPpotion()
+    public void drinkHPpotion()
     
     {
-    	if(this.hpPotionCooltime<=0) this.hpPotionCooltime = 2;
-    	else 
-    	{
-    		System.out.println("아직 HP포션을 사용할 수 없습니다! 남은 시간 : " + this.hpPotionCooltime);
-    		return false;
-    	}
     	System.out.println(this.name + "이(가) HP물약을 사용합니다! HP의 50%가 회복됩니다."); 
     	System.out.print("현재hp: " + this.hp);
     	this.hp = Math.min(m_hp, (int)(this.m_hp*0.5) + this.hp);
     	System.out.println(" -> " + this.hp);
-    	this.mpPotionCooltime--;
-    	return true;    
     }
 
-    public boolean drinkMPpotion()
+    public void drinkMPpotion()
     {
-    	if(this.mpPotionCooltime<=0) this.mpPotionCooltime = 2;
-    	else 
-    	{
-    		System.out.println("아직 HP포션을 사용할 수 없습니다! 남은 시간 : " + this.mpPotionCooltime);
-    		return false;
-    	}
+
     	System.out.println(this.name + "이(가) MP물약을 사용합니다! MP의 50%가 회복됩니다."); 
     	System.out.print("현재mp: " + this.mp);
     	this.mp = Math.min(m_mp, (int)(this.m_mp*0.5) + this.mp);
     	System.out.println(" -> " + this.mp);    
-    	this.hpPotionCooltime--;
-    	return true;
     }
 
-	public void attack() {
-		int damage;
-		w.attack();
-		damage = (int)((this.power / (enemy.def/100))*(0.75+Math.random()/2));
-		if(enemy instanceof 마법사) enemy.passive(damage);
-		else enemy.hp -= damage;
-		System.out.println("가한 데미지 : " + damage);
-		System.out.println("적 남은 체력 :" + Math.max(0, enemy.hp));
-		this.buffTime--;
-	}
-
+    public void attack() {}
 	public void skillAttack(int skillNum) {
 		System.out.println(this.name + "의 " + w.getSkillName()[skillNum] + "!");
 		int damage = (int)(((this.power*(w.getSkillPower()[skillNum]/10)) / (enemy.def/100) *(0.75+Math.random()/2)));
 		if(enemy instanceof 마법사) enemy.passive(damage);
 		else enemy.hp -= damage;
+		this.mp-=  w.getSkillMP()[skillNum];
 		System.out.println("가한 데미지 : " + damage);
 		System.out.println("적 남은 체력 :" +Math.max(0,enemy.hp));
 		this.buffTime--;
 	}
-	public void passive(double realDamage) { 
+	public void passive(int realDamage) { 
 		//마법사 메서드에서만 오버라이딩
 	}
 	
@@ -178,21 +148,6 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 		this.buffSkillMp = buffSkillMp;
 	}
 
-	public int getHpPotionCooltime() {
-		return hpPotionCooltime;
-	}
-
-	public void setHpPotionCooltime(int hpPotionCooltime) {
-		this.hpPotionCooltime = hpPotionCooltime;
-	}
-
-	public int getMpPotionCooltime() {
-		return mpPotionCooltime;
-	}
-
-	public void setMpPotionCooltime(int mpPotionCooltime) {
-		this.mpPotionCooltime = mpPotionCooltime;
-	}
 	public Player getEnemy() {
 		return enemy;
 	}
@@ -202,19 +157,6 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 	}
 	public abstract void buffskill();
 	public abstract void buffRelease();
-	public int getSkill_Cooltime1() {
-		return skill_Cooltime1;
-	}
-	public void setSkill_Cooltime1(int skill_Cooltime1) {
-		this.skill_Cooltime1 = skill_Cooltime1;
-	}
-	public int getSkill_Cooltime2() {
-		return skill_Cooltime2;
-	}
-
-	public void setSkill_Cooltime2(int skill_Cooltime2) {
-		this.skill_Cooltime2 = skill_Cooltime2;
-	}
 	public Weapon getW() {
 		return w;
 	}

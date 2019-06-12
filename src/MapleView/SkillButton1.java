@@ -10,24 +10,18 @@ import MapleClass.Player;
 public class SkillButton1 extends JButton implements MouseListener{
 
 	private Player p;
-	
-	public SkillButton1(Player p) { //player¿« SkillButton1
+	private SkillEffectButton seb;
+	public SkillButton1(Player p, SkillEffectButton seb) { //player¿« SkillButton1
 		this.p = p;
+		this.seb = seb;
+		this.setText("skill1");
 		this.setSize(65, 35);
-		this.addAction();
-	}
-	
-	public SkillButton1 () {
-	}
-	
-	public void addAction() {
 		this.addMouseListener(this);
-		
 	}
-
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		p.skillAttack(0);
+		seb.start(p.getW().getSkillEffect().get(0));
 		
 	}
 

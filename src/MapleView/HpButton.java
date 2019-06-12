@@ -7,29 +7,37 @@ import javax.swing.JButton;
 
 import MapleClass.Player;
 
-public class HpButton extends JButton implements MouseListener{
+public class HpButton extends JButton implements MouseListener, Runnable{
 
 	private Player p;
-	
+	private Thread t;
 	public HpButton(Player player) { //HpButton은 HpPotion 버튼이에요. Hp바는 ProgressBar로 표시합니다.
 		this.p=player;
 	    this.setSize(65, 35);
-		this.addAction();
-	} 
-	
-	public HpButton() {
-	    this.setSize(65, 35);
-	}
-	
-	public void addAction() {
+	    this.setText("HP");
 		this.addMouseListener(this);
-		
+	} 
+	public void start() {t.start();}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		this.setEnabled(false);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		this.setEnabled(true);
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		if(this.isEnabled()) {
 			this.p.drinkHPpotion();
-			
+			t= new Thread(this);
+			t.start();
+		}
 	}
 
 	@Override
@@ -56,6 +64,8 @@ public class HpButton extends JButton implements MouseListener{
 		// TODO Auto-generated method stub
 
 	}
+
+	
 	
 }
 
