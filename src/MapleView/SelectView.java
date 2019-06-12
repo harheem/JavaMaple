@@ -19,23 +19,24 @@ import control.UserDataList;
 public class SelectView extends JFrame{ //View에선 버튼의 생성과 추가 및 Location 설정. Button에서 버튼의 사이즈 및 아이콘 설정.
 	
 	private Image screenImage;
-	private Image selectBackground = new ImageIcon(Main.class.getResource("../image/login/mapleLogin.jpg")).getImage();
+	private Image selectBackground;
 	private Graphics screenGraphic;
 	private SelectButton sb;
 	private int yLctn; // 직업명 버튼 y좌표
 	private int index; // 사용자가 선택한 직업 인덱스번호
 	
 	public SelectView() {
-	
+		// 배경이미지
 		defaultViewSet();
 		this.sb = new SelectButton();
-		this.yLctn = 110; //setBound과정 필요. 우선 임의설정한 값들임.
+		this.yLctn = 60; //setBound과정 필요. 우선 임의설정한 값들임.
 
 		for (int i = 0; i < 8; i++) { 
 			int num=i;
 			
-			sb.imgButton[num].setLocation(220, 440);
-			sb.nameButton[num].setLocation(630, this.yLctn);
+			sb.imgButton[num].setLocation(250, 110);
+			sb.imgButton[num].setVisible(false); // 직업img버튼은 직업name버튼에 마우스를 올려야 보이도록 함.
+			sb.nameButton[num].setLocation(1020, this.yLctn);
 			sb.nameButton[num].addMouseListener(new MouseListener() { //View쪽 접근기능이 필요한 버튼은 View에서 기능(재)정의
 				@Override
 				public void mouseClicked(MouseEvent e) {
@@ -69,9 +70,8 @@ public class SelectView extends JFrame{ //View에선 버튼의 생성과 추가 및 Locatio
 			});
 			this.add(sb.imgButton[num]);
 			this.add(sb.nameButton[num]);
-			this.yLctn += 50;
+			this.yLctn += 80;
 		}
-		this.setVisible(true);
 	}
 	public void defaultViewSet()
 	{
@@ -80,7 +80,9 @@ public class SelectView extends JFrame{ //View에선 버튼의 생성과 추가 및 Locatio
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setBackground(new Color(0, 0, 0, 0));
+		this.setBackground(new Color(0, 0, 0, 0));
+		this.selectBackground = new ImageIcon(Main.class.getResource("../image/background/ClassSelect.png")).getImage();
+		this.setVisible(true);
 		this.setLayout(null);
 	}
 	public void paint(Graphics g) {

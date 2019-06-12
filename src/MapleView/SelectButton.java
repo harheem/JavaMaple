@@ -1,31 +1,34 @@
 package MapleView;
 
+import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
 
 public class SelectButton extends JButton implements MouseListener{ //View에선 버튼의 생성과 추가 및 Location 설정. Button에서 버튼의 사이즈 및 아이콘 설정.
 	
-	JButton[] nameButton = {};
-	JButton[] imgButton = {};
+	JButton[] nameButton;
+	JButton[] imgButton;
+	private ImageIcon[] img, name;
 	
 	public SelectButton() {
 		this.nameButton = new JButton[8];
 		this.imgButton = new JButton[8];
+		this.img=new ImageIcon[8];
+		this.name=new ImageIcon[8];
 		
-		for(int i=0;i<8;i++) {
-			/*
-			 * 버튼마다 이미지 설정하기
-			this.imgButton[i].setIcon(~~);
-			this.nameButton[i].setIcon(~~);
-			*/
+		for(int i=0;i<8;i++) {			
 			this.imgButton[i] = new JButton();
 			this.nameButton[i] = new JButton();
-			this.imgButton[i].setSize(150,150);
-			this.nameButton[i].setSize(100,30);
+			this.img[i]=new ImageIcon(Main.class.getResource("../image/characterByNum/"+i+".png"));
+			this.imgButton[i].setIcon(this.img[i]);
+			//this.nameButton[i].setIcon(new ImageIcon(Main.class.getResource("../image/charNameByNum/"+i+".png")));
+			this.imgButton[i].setSize(500,600); // setSize 말고 사진이 잘려보이지 않는 다른 기능
+			this.nameButton[i].setSize(180,50);
 		}
 		this.addAction();
 	}
