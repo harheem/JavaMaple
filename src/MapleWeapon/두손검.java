@@ -17,12 +17,12 @@ public class 두손검 extends Weapon {
 		skillIcon.add("../image/skillIcon/PaladinSkill2.png");
 		skillIcon.add("../image/skillIcon/PaladinBuff.png");
 		//스킬이펙트 플레이어 스킬 2개, 상대스킬 2개 버프 플레이어, 상대꺼
-		skillEffect.add("../image/skilleffect/PaladinSkill1Effect.png");
-		skillEffect.add("../image/skilleffect/PaladinSkill2Effect.png");
-		skillEffect.add("../image/skilleffect_e/PaladinSkill1Effect.png");
-		skillEffect.add("../image/skilleffect_e/PaladinSkill2Effect.png");
-		skillEffect.add("../image/skilleffect/PaladinBuffEffect_p.png");
-		skillEffect.add("../image/skilleffect_e/PaladinBuffEffect.png");
+		skillEffect.add("../image/skilleffect/PaladinSkill1Effect.gif");
+		skillEffect.add("../image/skilleffect/PaladinSkill2Effect.gif");
+		skillEffect.add("../image/skilleffect_e/PaladinSkill1Effect.gif");
+		skillEffect.add("../image/skilleffect_e/PaladinSkill2Effect.gif");
+		skillEffect.add("../image/skilleffect/PaladinBuffEffect_p.gif");
+		skillEffect.add("../image/skilleffect_e/PaladinBuffEffect.gif");
 	}
 
 }

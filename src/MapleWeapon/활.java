@@ -17,12 +17,12 @@ public class 활 extends Weapon {
 		skillIcon.add("../image/skillIcon/BowMasterSkill2.png");
 		skillIcon.add("../image/skillIcon/ArcherBuff.png");
 		//스킬이펙트 플레이어 스킬 2개, 상대스킬 2개 버프 플레이어, 상대꺼
-		skillEffect.add("../image/skilleffect/BowMasterSkill1Effect.png");
-		skillEffect.add("../image/skilleffect/BowMasterSkill2Effect.png");
-		skillEffect.add("../image/skilleffect_e/BowMasterSkill1Effect.png");
-		skillEffect.add("../image/skilleffect_e/BowMasterSkill2Effect.png");
-		skillEffect.add("../image/skilleffect/ArcherBuffEffect_p.png");
-		skillEffect.add("../image/skilleffect_e/ArcherBuffEffect.png");
+		skillEffect.add("../image/skilleffect/BowMasterSkill1Effect.gif");
+		skillEffect.add("../image/skilleffect/BowMasterSkill2Effect.gif");
+		skillEffect.add("../image/skilleffect_e/BowMasterSkill1Effect.gif");
+		skillEffect.add("../image/skilleffect_e/BowMasterSkill2Effect.gif");
+		skillEffect.add("../image/skilleffect/ArcherBuffEffect_p.gif");
+		skillEffect.add("../image/skilleffect_e/ArcherBuffEffect.gif");
 				
 	}
 

@@ -7,28 +7,39 @@ import javax.swing.JButton;
 
 import MapleClass.Player;
 
-public class SkillButton2 extends JButton implements MouseListener{
+public class SkillButton2 extends JButton implements MouseListener, Runnable{
 
 	private Player p;
-	
-	public SkillButton2(Player player) {
-		this.p=player;
+	private Thread t;
+	private SkillEffectButton seb;
+	public SkillButton2(Player p, SkillEffectButton seb) {
+		this.p = p;
+		this.seb = seb;
+		this.setText("skill2");
 		this.setSize(65, 35);
-		this.addAction();
-	}
-	
-	public SkillButton2 () {
-	}
-
-	public void addAction() {
 		this.addMouseListener(this);
+	}
+	public void run()
+	{
+		this.setEnabled(false);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.setEnabled(true);
 		
 	}
-
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		p.skillAttack(1);
-		
+		if(isEnabled())
+		{
+			p.skillAttack(1);
+			seb.start(p.getW().getSkillEffect().get(1));
+			t = new Thread(this);
+			t.start();
+		}
 	}
 
 	@Override

@@ -18,12 +18,12 @@ public class 스태프 extends Weapon {
 		skillIcon.add("../image/skillIcon/ThunderSkill2.png");
 		skillIcon.add("../image/skillIcon/WizardBuff.png");
 		//스킬이펙트 플레이어 스킬 2개, 상대스킬 2개 버프 플레이어, 상대꺼
-		skillEffect.add("../image/skilleffect/ThunderSkill1Effect.png");
-		skillEffect.add("../image/skilleffect/ThunderSkill2Effect.png");
-		skillEffect.add("../image/skilleffect_e/ThunderSkill1Effect.png");
-		skillEffect.add("../image/skilleffect_e/ThunderSkill2Effect.png");
-		skillEffect.add("../image/skilleffect/WizardBuffEffect_p.png");
-		skillEffect.add("../image/skilleffect_e/WizardBuffEffect.png");
+		skillEffect.add("../image/skilleffect/ThunderSkill1Effect.gif");
+		skillEffect.add("../image/skilleffect/ThunderSkill2Effect.gif");
+		skillEffect.add("../image/skilleffect_e/ThunderSkill1Effect.gif");
+		skillEffect.add("../image/skilleffect_e/ThunderSkill2Effect.gif");
+		skillEffect.add("../image/skilleffect/WizardBuffEffect_p.gif");
+		skillEffect.add("../image/skilleffect_e/WizardBuffEffect.gif");
 	}
 
 

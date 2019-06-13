@@ -18,12 +18,12 @@ public class 단검 extends Weapon {
 		skillIcon.add("../image/skillIcon/ShadwerSkill2.png");
 		skillIcon.add("../image/skillIcon/ThiefBuff.png");
 		//스킬이펙트 플레이어 스킬 2개, 상대스킬 2개 버프 플레이어, 상대꺼
-		skillEffect.add("../image/skilleffect/ShadwerSkill1Effect.png");
-		skillEffect.add("../image/skilleffect/ShadwerSkill2Effect.png");
-		skillEffect.add("../image/skilleffect_e/ShadwerSkill1Effect.png");
-		skillEffect.add("../image/skilleffect_e/ShadwerSkill2Effect.png");
-		skillEffect.add("../image/skilleffect/ThiefBuffEffect_p.png");
-		skillEffect.add("../image/skilleffect_e/ThiefBuffEffect.png");
+		skillEffect.add("../image/skilleffect/ShadwerSkill1Effect.gif");
+		skillEffect.add("../image/skilleffect/ShadwerSkill2Effect.gif");
+		skillEffect.add("../image/skilleffect_e/ShadwerSkill1Effect.gif");
+		skillEffect.add("../image/skilleffect_e/ShadwerSkill2Effect.gif");
+		skillEffect.add("../image/skilleffect/ThiefBuffEffect_p.gif");
+		skillEffect.add("../image/skilleffect_e/ThiefBuffEffect.gif");
 	}
 
 }
