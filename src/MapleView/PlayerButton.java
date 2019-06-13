@@ -3,6 +3,7 @@ package MapleView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
@@ -12,9 +13,12 @@ public class PlayerButton extends JButton implements ActionListener{ // ActionLi
 	Player p;
 	
 	public PlayerButton(Player p) {
+		this.setBorderPainted(false);
+	    this.setContentAreaFilled(false);
+	    this.setFocusPainted(false);
 		this.p = p;
 		this.setSize(150, 180);
-
+		this.setIcon(new ImageIcon(Main.class.getResource(p.getImageIcon().get(2))));
 		//플레이어가 이미지경로 갖고 있게해서 이미지아이콘 설정
 	}
 

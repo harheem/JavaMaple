@@ -12,6 +12,9 @@ public class SkillButton1 extends JButton implements MouseListener{
 	private Player p;
 	private SkillEffectButton seb;
 	public SkillButton1(Player p, SkillEffectButton seb) { //player¿« SkillButton1
+		this.setBorderPainted(false);
+		this.setContentAreaFilled(false);
+	    this.setFocusPainted(false);
 		this.p = p;
 		this.seb = seb;
 		this.setText("skill1");

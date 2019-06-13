@@ -34,6 +34,7 @@ public class ÆÈ¶óµò extends Àü»ç {
 		if (this.mp < this.buffSkillMp)
 			return;
 		else {
+			this.mp-=buffSkillMp;
 			enemy_initial_def = enemy.getDef();
 			this.def *=1.25;
 			enemy.def*=0.75;
