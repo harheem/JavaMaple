@@ -12,7 +12,7 @@ public class SkillEffectButton extends JButton implements Runnable{
 	    this.setContentAreaFilled(false);
 	    this.setFocusPainted(false);
 		this.setVisible(false);
-		this.setSize(250,180);
+		this.setSize(400,250);
 	}
 	public void start(String s)
 	{

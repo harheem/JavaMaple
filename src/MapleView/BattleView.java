@@ -262,8 +262,8 @@ public class BattleView extends JFrame implements Runnable{ //View에선 버튼의 생
 		this.buff.setLocation(20,320);
 		this.hb.setLocation(110,370);
 		this.mb.setLocation(110,445);
-		this.p1.setLocation(230,400);
-		this.p2.setLocation(950,400);
+		this.p1.setLocation(100,120);
+		this.p2.setLocation(850,120);
 		this.w1.setLocation(150,600);
 		this.w2.setLocation(870,600);
 		this.pHp.setLocation(230,600);
@@ -282,15 +282,15 @@ public class BattleView extends JFrame implements Runnable{ //View에선 버튼의 생
 		this.eh.setLocation(1150,600);
 		this.em.setLocation(1150,650);
 		
-		this.pse.setLocation(380,400);
-		this.ese.setLocation(680,400);
+		this.pse.setLocation(450,250);
+		this.ese.setLocation(680,250);
 		
 		this.timer.setLocation(550,250);
 		
-		this.pbe.setLocation(230,320);
-		this.ebe.setLocation(950,320);
+		this.pbe.setLocation(230,220);
+		this.ebe.setLocation(850,220);
 		
-		this.pbi.setLocation(300,320);
+		this.pbi.setLocation(300,220);
 		this.ebi.setLocation(1000,320);
 	}
 

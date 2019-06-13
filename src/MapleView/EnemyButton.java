@@ -25,7 +25,7 @@ public class EnemyButton extends JButton implements Runnable{
 		this.seb = seb;
 		this.beb = beb;
 		this.bi = bi;
-		this.setSize(150, 180);
+		this.setSize(450, 600);
 		this.start();
 		this.setIcon(new ImageIcon(Main.class.getResource(p.getImageIcon().get(3))));
 	}

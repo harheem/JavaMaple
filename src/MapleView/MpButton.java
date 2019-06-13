@@ -3,6 +3,7 @@ package MapleView;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
@@ -16,8 +17,8 @@ public class MpButton extends JButton implements MouseListener, Runnable{
 		this.setContentAreaFilled(false);
 	    this.setFocusPainted(false);
 		this.p=player;
-	    this.setSize(65, 35);
-	    this.setText("mp");
+		this.setIcon(new ImageIcon(Main.class.getResource("../image/skillIcon/MpButton.png")));
+	    this.setSize(60, 60);
 	    this.addMouseListener(this);
 	}
 	public void start() {t.start();}
