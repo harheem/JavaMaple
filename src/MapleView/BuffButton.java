@@ -3,6 +3,7 @@ package MapleView;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
@@ -11,10 +12,17 @@ import MapleClass.마법사;
 public class BuffButton extends JButton implements MouseListener, Runnable{
 	private Player p;
 	private Thread t;
-	
-	public BuffButton(Player p)
+	private BuffEffectButton beb; //버프이펙트
+	private JButton bi; //버프아이콘
+	public BuffButton(Player p, BuffEffectButton beb, JButton bi)
 	{
+		this.setBorderPainted(false);
+	    this.setContentAreaFilled(false);
+	    this.setFocusPainted(false);
+		this.beb = beb;
 		this.p = p;
+		this.bi = bi;
+		this.bi.setIcon(new ImageIcon(Main.class.getResource(p.getW().getSkillIcon().get(2))));
 		this.setText("buff");
 		if(p instanceof 마법사) this.setVisible(false);
 		this.setSize(65,35);
@@ -22,7 +30,10 @@ public class BuffButton extends JButton implements MouseListener, Runnable{
 	}
 	@Override
 	public void run() {
+		p.buffskill();
+		bi.setVisible(true);
 		this.setEnabled(false);
+		beb.start();
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
@@ -30,6 +41,7 @@ public class BuffButton extends JButton implements MouseListener, Runnable{
 			e.printStackTrace();
 		}
 		p.buffRelease();
+		bi.setVisible(false);
 		this.setEnabled(true);
 	}
 	@Override
@@ -37,10 +49,8 @@ public class BuffButton extends JButton implements MouseListener, Runnable{
 		// TODO Auto-generated method stub
 		if(this.isEnabled())
 		{
-			p.buffskill();
 			t = new Thread(this);
-			t.start();
-			
+			t.start();	
 		}
 	}
 

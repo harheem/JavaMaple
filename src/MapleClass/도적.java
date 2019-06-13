@@ -10,6 +10,7 @@ public abstract class 도적 extends Player implements Buffable {
 		this.hp = this.m_hp;
 		this.mp = this.m_mp;
 		this.buffSkillName = "쉐도우파트너";
+		this.buffSkillMp = 50;
 	}
 	@Override
 	public void buffskill() {
@@ -19,6 +20,7 @@ public abstract class 도적 extends Player implements Buffable {
 		if (this.mp < this.buffSkillMp)
 			return;
 		else {
+			this.mp-=this.buffSkillMp;
 			this.power *= 1.25;
 			// 두번 공격하는 의미로 나눠놨습니다
 			this.buffTime = 3;

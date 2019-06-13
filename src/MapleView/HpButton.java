@@ -12,6 +12,9 @@ public class HpButton extends JButton implements MouseListener, Runnable{
 	private Player p;
 	private Thread t;
 	public HpButton(Player player) { //HpButton은 HpPotion 버튼이에요. Hp바는 ProgressBar로 표시합니다.
+		this.setBorderPainted(false);
+		this.setContentAreaFilled(false);
+	    this.setFocusPainted(false);
 		this.p=player;
 	    this.setSize(65, 35);
 	    this.setText("HP");
@@ -22,6 +25,7 @@ public class HpButton extends JButton implements MouseListener, Runnable{
 	public void run() {
 		// TODO Auto-generated method stub
 		this.setEnabled(false);
+		if(this.p.getHp()>0) this.p.drinkHPpotion();
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e1) {
@@ -34,7 +38,6 @@ public class HpButton extends JButton implements MouseListener, Runnable{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(this.isEnabled()) {
-			this.p.drinkHPpotion();
 			t= new Thread(this);
 			t.start();
 		}

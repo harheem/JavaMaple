@@ -3,25 +3,29 @@ package MapleView;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-public class SkillEffectButton extends JButton implements Runnable{
-	
+import MapleClass.Player;
+
+public class BuffEffectButton extends JButton implements Runnable{
 	private Thread t;
-	public SkillEffectButton()
+	private Player p;
+	public BuffEffectButton(Player p)
 	{
+		this.p = p;
 		this.setBorderPainted(false);
 	    this.setContentAreaFilled(false);
 	    this.setFocusPainted(false);
 		this.setVisible(false);
-		this.setSize(250,180);
+		this.setSize(70,70);
 	}
-	public void start(String s)
+	public void start() 
 	{
-		this.setIcon(new ImageIcon(Main.class.getResource(s)));
+		this.setIcon(new ImageIcon(Main.class.getResource(p.getW().getSkillEffect().get(2))));
 		t = new Thread(this);
 		t.start();
 	}
 	@Override
 	public void run() {
+		// TODO Auto-generated method stub
 		this.setVisible(true);
 		try {
 			Thread.sleep(500);
@@ -29,9 +33,7 @@ public class SkillEffectButton extends JButton implements Runnable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		this.setIcon(null);
 		this.setVisible(false);
-		
+		this.setIcon(null);
 	}
-
 }

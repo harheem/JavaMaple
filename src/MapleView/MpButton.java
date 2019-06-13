@@ -12,6 +12,9 @@ public class MpButton extends JButton implements MouseListener, Runnable{
 	private Player p;
 	private Thread t;
 	public MpButton(Player player) {
+		this.setBorderPainted(false);
+		this.setContentAreaFilled(false);
+	    this.setFocusPainted(false);
 		this.p=player;
 	    this.setSize(65, 35);
 	    this.setText("mp");
@@ -22,6 +25,7 @@ public class MpButton extends JButton implements MouseListener, Runnable{
 	public void run() {
 		// TODO Auto-generated method stub
 		this.setEnabled(false);
+		if(p.getHp()>0) this.p.drinkMPpotion();
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
@@ -34,7 +38,6 @@ public class MpButton extends JButton implements MouseListener, Runnable{
 	public void mouseClicked(MouseEvent e) {
 			if(this.isEnabled())
 			{
-				this.p.drinkMPpotion();
 				t = new Thread(this);
 				start();
 			}

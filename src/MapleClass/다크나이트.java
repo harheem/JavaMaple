@@ -27,6 +27,7 @@ public class 다크나이트 extends 전사 {
 		if (this.mp < this.buffSkillMp)
 			return;
 		else {
+			this.mp-=buffSkillMp;
 			this.m_hp = (int) (this.m_hp * 1.5);
 			this.m_mp = (int) (this.m_mp * 1.5);
 			this.buffTime = 3;
