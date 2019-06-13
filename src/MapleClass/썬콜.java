@@ -11,8 +11,8 @@ public class ½ãÄÝ extends ¸¶¹ý»ç {
     	this.def = 120;
 		imageIcon.add("../image/player/IceLightning_p.png");
 		imageIcon.add("../image/player/IceLightning_e.png");
-		imageIcon.add("../image/player/m/IceLightning_p.png");
-		imageIcon.add("../image/player/m/IceLightning_e.png");
+		imageIcon.add("../image/player/m/IceLightning_p_m.png");
+		imageIcon.add("../image/player/m/IceLightning_e_m.png");
 	}
 
 	@Override

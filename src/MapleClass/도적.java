@@ -9,6 +9,7 @@ public abstract class 도적 extends Player implements Buffable {
 		this.m_mp = 300;
 		this.hp = this.m_hp;
 		this.mp = this.m_mp;
+		this.buffSkillName = "쉐도우파트너";
 	}
 	@Override
 	public void buffskill() {

@@ -12,8 +12,8 @@ public class ¼¨µµ¾î extends µµÀû {
 		this.def = 130;
 		imageIcon.add("../image/player/Shadower_p.png");
 		imageIcon.add("../image/player/Shadower_e.png");
-		imageIcon.add("../image/player/m/Shadower_p.png");
-		imageIcon.add("../image/player/m/Shadower_e.png");
+		imageIcon.add("../image/player/m/Shadower_p_m.png");
+		imageIcon.add("../image/player/m/Shadower_e_m.png");
 	}
 	public void reinforce() {
 		w.setWpIndex(w.getWpIndex() + 1);

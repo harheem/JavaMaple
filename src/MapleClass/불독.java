@@ -11,8 +11,8 @@ public class 불독 extends 마법사 {
     	this.def = 130;
 		imageIcon.add("../image/player/FirePoison_p.png");
 		imageIcon.add("../image/player/FirePoison_e.png");
-		imageIcon.add("../image/player/m/FirePoison_p.png");
-		imageIcon.add("../image/player/m/FirePoison_e.png");
+		imageIcon.add("../image/player/m/FirePoison_p_m.png");
+		imageIcon.add("../image/player/m/FirePoison_e_m.png");
 	}
 
 	@Override

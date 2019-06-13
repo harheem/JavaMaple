@@ -12,8 +12,8 @@ public class ½Å±Ã extends ±Ã¼ö {
 		this.initial_power=power;
 		imageIcon.add("../image/player/Marksman_p.png");
 		imageIcon.add("../image/player/Marksman_e.png");
-		imageIcon.add("../image/player/m/Marksman_p.png");
-		imageIcon.add("../image/player/m/Marksman_e.png");
+		imageIcon.add("../image/player/m/Marksman_p_m.png");
+		imageIcon.add("../image/player/m/Marksman_e_m.png");
 	}
 
 	@Override

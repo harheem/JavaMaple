@@ -12,8 +12,8 @@ public class 나이트로드 extends 도적 {
 		this.def = 130;
 		imageIcon.add("../image/player/NightLord_p.png");
 		imageIcon.add("../image/player/NightLord_e.png");
-		imageIcon.add("../image/player/m/NightLord_p.png");
-		imageIcon.add("../image/player/m/NightLord_e.png");
+		imageIcon.add("../image/player/m/NightLord_p_m.png");
+		imageIcon.add("../image/player/m/NightLord_e_m.png");
 	}
 	public void reinforce() {
 		w.setWpIndex(w.getWpIndex() + 1);

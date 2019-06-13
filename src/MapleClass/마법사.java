@@ -7,6 +7,7 @@ public abstract class 마법사 extends Player {
 		this.m_mp = 1000;
 		this.hp = this.m_hp;
 		this.mp = this.m_mp;
+		this.buffSkillName = "매직가드";
 	}
 	
 	public void passive(int realDamage) {

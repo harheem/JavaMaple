@@ -12,8 +12,8 @@ public class 보우마스터 extends 궁수 {
 		this.initial_power=power;
 		imageIcon.add("../image/player/BowMaster_p.png");
 		imageIcon.add("../image/player/BowMaster_e.png");
-		imageIcon.add("../image/player/m/BowMaster_p.png");
-		imageIcon.add("../image/player/m/BowMaster_e.png");
+		imageIcon.add("../image/player/m/BowMaster_p_m.png");
+		imageIcon.add("../image/player/m/BowMaster_e_m.png");
 
 	}
 	public void reinforce() {

@@ -50,6 +50,7 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 		int damage = (int)(((this.power*(w.getSkillPower()[skillNum]/10)) / (enemy.def/100) *(0.75+Math.random()/2)));
 		if(enemy instanceof 마법사) enemy.passive(damage);
 		else enemy.hp -= damage;
+		enemy.hp = Math.max(enemy.hp, 0);
 		this.mp-=  w.getSkillMP()[skillNum];
 		System.out.println("가한 데미지 : " + damage);
 		System.out.println("적 남은 체력 :" +Math.max(0,enemy.hp));
