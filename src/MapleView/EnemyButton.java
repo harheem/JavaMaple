@@ -17,7 +17,17 @@ public class EnemyButton extends JButton implements Runnable{
 	private SkillEffectButton seb;
 	private BuffEffectButton beb;
 	private JButton bi; //버프아이콘
-	public EnemyButton(Player p, SkillEffectButton seb, BuffEffectButton beb, JButton bi) {
+
+              //체크 뷰에서 받아오고싶어서 쓰레드기능을 뺀 부분 생성자 만들었습니다!
+	public EnemyButton(Player p) {
+		this.setBorderPainted(false);
+	    this.setContentAreaFilled(false);
+	    this.setFocusPainted(false);
+		this.p = p;
+		this.setSize(450, 600);
+		this.setIcon(new ImageIcon(Main.class.getResource(p.getImageIcon().get(1))));
+	
+              public EnemyButton(Player p, SkillEffectButton seb, BuffEffectButton beb, JButton bi) {
 		this.setBorderPainted(false);
 	    this.setContentAreaFilled(false);
 	    this.setFocusPainted(false);
