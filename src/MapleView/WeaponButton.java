@@ -20,7 +20,7 @@ public class WeaponButton extends JButton {
 	    this.setFocusPainted(false);
 		this.setSize(75, 75 ); 
 		this.p = p;
-		this.setIcon(new ImageIcon(Main.class.getResource(p.getW().getWpIcon().get(0))));
+		this.setIcon(new ImageIcon(Main.class.getResource(p.getW().getWpIcon().get(p.getW().getWpIndex()))));
 	}
 	
 	// public WeaponButton() {}

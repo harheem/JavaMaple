@@ -45,17 +45,17 @@ public class EnemyButton extends JButton implements Runnable{
 		}
 		if(p.getHp()<p.getM_hp()/3) p.drinkHPpotion();
 		else if (p.getMp()<p.getM_mp()/3) p.drinkMPpotion();
-		int menu = r.nextInt(2);
-		if(menu<2)
+		else
 		{
+			int menu = r.nextInt(2);
 			p.skillAttack(menu);
 			seb.start(p.getW().getSkillEffect().get(2+menu));
-		}
-		if(p.getBuffTime()==0)
-		{
-			p.buffRelease();
-			bi.setVisible(false);
-			bi.setIcon(null);
+			if(p.getBuffTime()==0)
+			{
+				p.buffRelease();
+				bi.setVisible(false);
+				bi.setIcon(null);
+			}
 		}
 	}
 	@Override

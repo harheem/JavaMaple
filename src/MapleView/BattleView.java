@@ -291,7 +291,7 @@ public class BattleView extends JFrame implements Runnable{ //View에선 버튼의 생
 		this.ebe.setLocation(850,220);
 		
 		this.pbi.setLocation(300,220);
-		this.ebi.setLocation(1000,320);
+		this.ebi.setLocation(1000,220);
 	}
 
 }
