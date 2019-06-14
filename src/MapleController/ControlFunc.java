@@ -50,8 +50,8 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 		Player e=null;
 		creator(e,enem);
 		
-		Player p1=new 다크나이트();
-		Player e1=new 팔라딘();
+		Player p1=new 썬콜();
+		Player e1=new 보우마스터();
 		e1.setEnemy(p1);
 		p1.setEnemy(e1);
 		BattleView bv=new BattleView(p1, e1);		//인자 전달을 static값으로 보내주니까 static 메서드가 못씀.

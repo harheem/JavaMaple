@@ -24,6 +24,11 @@ public class 스태프 extends Weapon {
 		skillEffect.add("../image/skilleffect_e/ThunderSkill2Effect.gif");
 		skillEffect.add("../image/skilleffect/WizardBuffEffect_p.gif");
 		skillEffect.add("../image/skilleffect_e/WizardBuffEffect.gif");
+		
+		//스킬설명(스킬1, 스킬2, 버프 순서)
+		skillExplanation.add("적에게 날카로운 얼음덩어리를 떨어뜨려 공격한다");
+		skillExplanation.add("적에게 거대한 전기의 구를 발생시켜 공격한다");
+		skillExplanation.add("활성화 시 받는 데미지의 일부를 MP로 대신한다. 단, MP가 0일 경우에는 그대로 HP를 소비하게 된다.");
 	}
 
 

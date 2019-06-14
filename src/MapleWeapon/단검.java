@@ -24,6 +24,12 @@ public class 단검 extends Weapon {
 		skillEffect.add("../image/skilleffect_e/ShadowerSkill2Effect.gif");
 		skillEffect.add("../image/skilleffect/ThiefBuffEffect_p.gif");
 		skillEffect.add("../image/skilleffect_e/ThiefBuffEffect.gif");
+		
+		//스킬설명(스킬1, 스킬2, 버프 순서)
+		skillExplanation.add("빠른속도로 다수의 적들을 벤다");
+		skillExplanation.add("적의 급소를 공격하여 엄청난 데미지를 준다");
+		skillExplanation.add("일정 시간동안 자신과 똑같은 행동을 하는 그림자 동료를 소환한다");
+		
 	}
 
 }

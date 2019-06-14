@@ -23,6 +23,13 @@ public class 두손검 extends Weapon {
 		skillEffect.add("../image/skilleffect_e/PaladinSkill2Effect.gif");
 		skillEffect.add("../image/skilleffect/PaladinBuffEffect_p.gif");
 		skillEffect.add("../image/skilleffect_e/PaladinBuffEffect.gif");
+		
+		//스킬설명(스킬1, 스킬2, 버프 순서)
+		skillExplanation.add("적 하나에게 강력한 다단히트 공격을 날린다.");
+		skillExplanation.add("순간적으로 무기에 성 속성을 부여해 적들을 침묵시킨다");
+		skillExplanation.add("다수의 적에게 위협을 가해 일정시간동안 공격력,방어력을 감소시킨다");
+		
+		
 	}
 
 }

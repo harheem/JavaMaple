@@ -3,9 +3,11 @@ package MapleView;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
+import MapleController.Main;
 
 public class SkillButton2 extends JButton implements MouseListener, Runnable{
 
@@ -18,15 +20,16 @@ public class SkillButton2 extends JButton implements MouseListener, Runnable{
 	    this.setFocusPainted(false);
 		this.p = p;
 		this.seb = seb;
-		this.setText("skill2");
-		this.setSize(65, 35);
+		this.setIcon(new ImageIcon(Main.class.getResource(p.getW().getSkillIcon().get(1))));
+		this.setToolTipText(p.getW().getSkillExplanation().get(1));
+		this.setSize(60, 60);
 		this.addMouseListener(this);
 	}
 	public void run()
 	{
 		this.setEnabled(false);
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(5000); //쿨타임
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,7 +39,7 @@ public class SkillButton2 extends JButton implements MouseListener, Runnable{
 	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		if(isEnabled())
+		if(isEnabled()) //이 조건문 안달면 disabled 상태인데 눌러지는 경우가 있어서 한번 더 검사했습니다
 		{
 			p.skillAttack(1);
 			seb.start(p.getW().getSkillEffect().get(1));

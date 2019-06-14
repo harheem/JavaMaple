@@ -24,7 +24,10 @@ public class 창 extends Weapon {
 		skillEffect.add("../image/skilleffect/DarkKnightBuffEffect_p.gif");
 		skillEffect.add("../image/skilleffect_e/DarkKnightBuffEffect.gif");
 		
-
+		//스킬설명(스킬1, 스킬2, 버프 순서)
+		skillExplanation.add("빠른 속도로 전방의 다수를 공격한다.");
+		skillExplanation.add("거대한 신화 속의 창을 적의 머리 위에 떨어뜨려 피해를 입힌다");
+		skillExplanation.add("일정 시간동안 자신과 파티원의 최대 HP, 최대 MP가 증가한다.");
 	}
 
 }

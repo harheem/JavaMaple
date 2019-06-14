@@ -23,6 +23,13 @@ public class 완드 extends Weapon {
 		skillEffect.add("../image/skilleffect_e/FireSkill2Effect.gif");
 		skillEffect.add("../image/skilleffect/WizardBuffEffect_p.gif");
 		skillEffect.add("../image/skilleffect_e/WizardBuffEffect.gif");
+		
+		
+		//스킬설명(스킬1, 스킬2, 버프 순서)
+		skillExplanation.add("다수의 적을 일정 시간동안 마비시키며 강한 데미지를 준다");
+		skillExplanation.add("하늘로부터 운석을 소환하여 다수의 적에게 강력한 화염 공격을 가한다");
+		skillExplanation.add("활성화 시 받는 데미지의 일부를 MP로 대신한다. 단, MP가 0일 경우에는 그대로 HP를 소비하게 된다.");
+		
 	}
 
 

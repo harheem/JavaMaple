@@ -17,6 +17,7 @@ public abstract class Weapon implements Attackable, Reinforcable {
     protected ArrayList<String> wpIcon = new ArrayList<String>(); 	//플레이어의 무기 아이콘 3개
     protected ArrayList<String> skillIcon = new ArrayList<String>(); 	//스킬아이콘 2개 버프아이콘 1개
     protected ArrayList<String> skillEffect = new ArrayList<String>();	//스킬이펙트 2개 버프이펙트 1개 상대꺼까지 해서 총 6개
+    protected ArrayList<String> skillExplanation = new ArrayList<String>();
     
     
 	@Override
@@ -112,6 +113,10 @@ public abstract class Weapon implements Attackable, Reinforcable {
 
 	public void setSkillPower(int[] skillPower) {
 		this.skillPower = skillPower;
+	}
+
+	public ArrayList<String> getSkillExplanation() {
+		return skillExplanation;
 	}
 
 }

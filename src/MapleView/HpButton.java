@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
+import MapleClass.ÆÈ¶óµò;
 import MapleController.Main;
 
 public class HpButton extends JButton implements MouseListener, Runnable{
@@ -18,6 +19,7 @@ public class HpButton extends JButton implements MouseListener, Runnable{
 		this.setContentAreaFilled(false);
 	    this.setFocusPainted(false);
 	    this.setIcon(new ImageIcon(Main.class.getResource("../image/skillIcon/hpButton.png")));
+	    this.setToolTipText("HPÀÇ 50%¸¦ È¸º¹ÇÑ´Ù");
 		this.p=player;
 	    this.setSize(60, 60);
 		this.addMouseListener(this);
@@ -27,9 +29,9 @@ public class HpButton extends JButton implements MouseListener, Runnable{
 	public void run() {
 		// TODO Auto-generated method stub
 		this.setEnabled(false);
-		if(this.p.getHp()>0) this.p.drinkHPpotion();
+		this.p.drinkHPpotion();
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(2000); //ÄðÅ¸ÀÓ
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

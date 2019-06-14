@@ -23,6 +23,12 @@ public class 석궁 extends Weapon {
 		skillEffect.add("../image/skilleffect_e/MarksmanSkill2Effect.gif");
 		skillEffect.add("../image/skilleffect/ArcherBuffEffect_p.gif");
 		skillEffect.add("../image/skilleffect_e/ArcherBuffEffect.gif");
+	
+		//스킬설명(스킬1, 스킬2, 버프 순서)
+		skillExplanation.add("적을 꿰뚫는 관통화살을 발사한다");
+		skillExplanation.add("적의 급소를 노려 치명적인 공격을 한다");
+		skillExplanation.add("일정시간동안 적의 약점을 찾아 치명상을 입힌다");
+	
 	}
 
 

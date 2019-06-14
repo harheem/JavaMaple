@@ -26,14 +26,13 @@ public class SkillEffectButton extends JButton implements Runnable{
 	public void run() {
 		this.setVisible(true);
 		try {
-			Thread.sleep(500);
+			Thread.sleep(400);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.setIcon(null);
-		this.setVisible(false);
-		
+		this.setVisible(false);		
 	}
 
 }

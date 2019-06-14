@@ -16,18 +16,18 @@ public class BuffEffectButton extends JButton implements Runnable{
 	    this.setContentAreaFilled(false);
 	    this.setFocusPainted(false);
 		this.setVisible(false);
-		this.setSize(70,70);
+		this.setSize(200,200);
 	}
-	public void start() 
+	public void start(String s) 
 	{
-		this.setIcon(new ImageIcon(Main.class.getResource(p.getW().getSkillEffect().get(2))));
+		this.setVisible(true);
+		this.setIcon(new ImageIcon(Main.class.getResource(s)));
 		t = new Thread(this);
 		t.start();
 	}
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		this.setVisible(true);
 		try {
 			Thread.sleep(500);
 		} catch (InterruptedException e) {

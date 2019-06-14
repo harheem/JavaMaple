@@ -19,6 +19,7 @@ public class MpButton extends JButton implements MouseListener, Runnable{
 	    this.setFocusPainted(false);
 		this.p=player;
 		this.setIcon(new ImageIcon(Main.class.getResource("../image/skillIcon/MpButton.png")));
+		 this.setToolTipText("MP의 50%를 회복한다");
 	    this.setSize(60, 60);
 	    this.addMouseListener(this);
 	}
@@ -27,9 +28,9 @@ public class MpButton extends JButton implements MouseListener, Runnable{
 	public void run() {
 		// TODO Auto-generated method stub
 		this.setEnabled(false);
-		if(p.getHp()>0) this.p.drinkMPpotion();
+		this.p.drinkMPpotion();
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(2000); //쿨타임
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -24,9 +24,14 @@ public class BuffButton extends JButton implements MouseListener, Runnable{
 		this.p = p;
 		this.bi = bi;
 		this.bi.setIcon(new ImageIcon(Main.class.getResource(p.getW().getSkillIcon().get(2))));
-		this.setText("buff");
-		if(p instanceof 마법사) this.setVisible(false);
-		this.setSize(65,35);
+		this.setIcon(new ImageIcon(Main.class.getResource(p.getW().getSkillIcon().get(2))));
+		this.setToolTipText(p.getW().getSkillExplanation().get(2));
+		if(p instanceof 마법사)
+		{
+			this.setEnabled(false);
+			bi.setVisible(true);
+		}
+		this.setSize(60,60);
 		this.addMouseListener(this);
 	}
 	@Override
@@ -34,7 +39,7 @@ public class BuffButton extends JButton implements MouseListener, Runnable{
 		p.buffskill();
 		bi.setVisible(true);
 		this.setEnabled(false);
-		beb.start();
+		beb.start(p.getW().getSkillEffect().get(4));
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {

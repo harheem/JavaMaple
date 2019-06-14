@@ -23,5 +23,10 @@ public class 아대 extends Weapon {
 		skillEffect.add("../image/skilleffect_e/NightLordSkill2Effect.gif");
 		skillEffect.add("../image/skilleffect/ThiefBuffEffect_p.gif");
 		skillEffect.add("../image/skilleffect_e/ThiefBuffEffect.gif");
+		
+		//스킬설명(스킬1, 스킬2, 버프 순서)
+		skillExplanation.add("전방으로 표창을 던저 공격한다");
+		skillExplanation.add("숨어있는 동료들을 총동원하여 전체를 불바다로 만든다");
+		skillExplanation.add("일정 시간동안 자신과 똑같은 행동을 하는 그림자 동료를 소환한다");
 	}
 }
