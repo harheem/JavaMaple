@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
+import MapleController.*;
 
 public class PlayerButton extends JButton implements ActionListener{ // ActionListener 기능 필요하신가요? 필요없으면 삭제바랍니다!
 	
@@ -29,6 +30,7 @@ public class PlayerButton extends JButton implements ActionListener{ // ActionLi
 		this.p = p;
 		this.setSize(450, 600);
 		this.setIcon(new ImageIcon(Main.class.getResource(p.getImageIcon().get(0))));
+	}
 
 	
 	//기본공격 자동으로 실행되게, 쓰레드로

@@ -23,9 +23,9 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
     protected Weapon w;
     protected ArrayList<String> imageIcon = new ArrayList<String>();
     //플레이어이미지 1.나, 2.상대, 미니플레이어 3.나, 4.상대
-    public Player()
-    {
-    }
+    
+    public Player() {}
+    
     public void drinkHPpotion()
     
     {
@@ -156,6 +156,8 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 	public void setEnemy(Player enemy) {
 		this.enemy = enemy;
 	}
+	
+	
 	public abstract void buffskill();
 	public abstract void buffRelease();
 	public Weapon getW() {

@@ -1,7 +1,10 @@
 package MapleView;
 
 import javax.swing.ImageIcon;
+
 import javax.swing.JButton;
+
+import MapleController.*;
 
 public class VSButton extends JButton {
 	public VSButton() {

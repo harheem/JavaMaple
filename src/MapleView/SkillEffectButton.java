@@ -3,6 +3,8 @@ package MapleView;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import MapleController.Main;
+
 public class SkillEffectButton extends JButton implements Runnable{
 	
 	private Thread t;

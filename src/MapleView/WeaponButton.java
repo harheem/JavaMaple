@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
+import MapleController.Main;
 import MapleWeapon.Weapon;
 
 public class WeaponButton extends JButton {

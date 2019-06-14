@@ -4,7 +4,10 @@ import MapleWeapon.단검;
 
 public class 섀도어 extends 도적 {
 
+	private static String explanation="섀도어: 단검을 주무기로 사용하는 암살자로  은신하여 적에게 다가가 치명적인 피해를 입힌다";
+	
 	public 섀도어() {
+		this.explanation="설명";
 		this.w = new 단검();
 		this.name = "섀도어";
 		this.power = 150+ w.getWpPower()[w.getWpIndex()];
@@ -14,6 +17,9 @@ public class 섀도어 extends 도적 {
 		imageIcon.add("../image/player/Shadower_e.png");
 		imageIcon.add("../image/player/m/Shadower_p_m.png");
 		imageIcon.add("../image/player/m/Shadower_e_m.png");
+	}
+	public static String getExplanation() {
+		return explanation;
 	}
 	public void reinforce() {
 		w.setWpIndex(w.getWpIndex() + 1);

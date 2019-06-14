@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import MapleClass.Player;
+import MapleController.*;
 //플레이어가 직업을 선택하고 난 다음 화면임
 //캐릭터 큰거 2개와 vs 버튼, 시작하기 버튼이 들어감
 

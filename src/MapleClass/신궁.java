@@ -4,7 +4,10 @@ import MapleWeapon.¼®±Ã;
 
 public class ½Å±Ã extends ±Ã¼ö {
 
+	private static String explanation="½Å±Ã: Á¤È®ÇÑ ¿ø¼¦ ¿øÅ³ÀÇ ½º³ªÀÌÆÛ°¡ ÄÁ¼ÁÀÎ ±Ã¼ö·Î °­·ÂÇÑ ÇÑ¹ßÀ» Àû¿¡°Ô ¼±»çÇÑ´Ù";
+	
 	public ½Å±Ã() {
+		this.explanation="¼³¸í";
 		this.w = new ¼®±Ã();
 		this.name = "½Å±Ã";
 		this.power = (150 + point * 5) + w.getWpPower()[w.getWpIndex()];
@@ -14,6 +17,9 @@ public class ½Å±Ã extends ±Ã¼ö {
 		imageIcon.add("../image/player/Marksman_e.png");
 		imageIcon.add("../image/player/m/Marksman_p_m.png");
 		imageIcon.add("../image/player/m/Marksman_e_m.png");
+	}
+	public static String getExplanation() {
+		return explanation;
 	}
 
 	@Override

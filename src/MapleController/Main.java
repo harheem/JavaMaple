@@ -1,8 +1,9 @@
-package MapleView;
+package MapleController;
 
 import MapleClass.*;
 import MapleView.*;
 import MapleController.*;
+import MapleWeapon.*;
 import control.UserDataList;
 
 public class Main {
@@ -12,8 +13,9 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		ControlFunc.logInFunc();
+		//ControlFunc.logInFunc();
 		ControlFunc.selectFunc();
+		ControlFunc.checkViewFunc();
 		ControlFunc.battleFunc();
 
 	}

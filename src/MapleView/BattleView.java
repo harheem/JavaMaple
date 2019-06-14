@@ -19,6 +19,7 @@ import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
 
 import MapleClass.Player;
+import MapleController.Main;
 
 public class BattleView extends JFrame implements Runnable { // View에선 버튼의 생성과 추가 및 Location 설정. Button에서 버튼의 사이즈 및 아이콘
 																// 설정.
@@ -51,7 +52,7 @@ public class BattleView extends JFrame implements Runnable { // View에선 버튼의 
 	public BattleView(Player p, Player e) { // 사용자 : p , 적 : e. 교수님이 좋아하시는 생성자 구성
 		this.p = p;
 		this.e = e;
-		this.stageNum = p.getW().getWpIndex()+1; // 무기 index값+1이 스테이지 넘버
+		this.stageNum = p.getW().getWpIndex() + 1; // 무기 index값+1이 스테이지 넘버
 		defaultViewSet();
 		this.creator();
 		this.time = 0;

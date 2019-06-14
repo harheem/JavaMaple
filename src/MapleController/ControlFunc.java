@@ -1,5 +1,7 @@
 package MapleController;
 
+import java.util.Random;
+
 import MapleClass.*;
 import MapleView.*;
 import control.UserDataList;
@@ -7,6 +9,8 @@ import control.UserDataList;
 public class ControlFunc {
 
 	public static Player p;
+	
+	public ControlFunc() {}
 	
 	public static void logInFunc() {
 		// login실행
@@ -30,35 +34,53 @@ public class ControlFunc {
 				break;
 			}
 		}
-		switch (sv.getIndex()) {
-		case 0: p=new 팔라딘();
-		break;
-		case 1: p=new 다크나이트();
-		break;
-		case 2: p=new 보우마스터();
-		break;
-		case 3: p=new 신궁();
-		break;
-		case 4: p=new 불독();
-		break;
-		case 5: p=new 썬콜();
-		break;
-		case 6: p=new 나이트로드();
-		break;
-		case 7: p=new 섀도어();
-		break;
-		}
+		creator(p,sv.getIndex());
+	}
+	
+	public static void checkViewFunc() {
+		
+		CheckView cv=new CheckView(new 다크나이트(), new 팔라딘(), 1);
+		
 	}
 
 	public static void battleFunc() {
-
-		BattleView bv=new BattleView(p, new 팔라딘());		// 적 객체를 랜덤으로 생성기능 구현 필요
+		Random rand = new Random();
+		int enem=rand.nextInt(8);
+		Player e=null;
+		creator(e,enem);
+		
+		Player p1=new 다크나이트();
+		Player e1=new 팔라딘();
+		e1.setEnemy(p1);
+		p1.setEnemy(e1);
+		BattleView bv=new BattleView(p1, e1);		//인자 전달을 static값으로 보내주니까 static 메서드가 못씀.
 
 		// e
 		// new BattleView(p1, e)
 		// if(p1.getHp == 0 { lose, if(e.getHP == 0) win
 		// BattleView.dispose();
 		// new nextView();
+	}
+	
+	public static void creator(Player x,int i) {
+		switch (i) {
+		case 0: x=new 팔라딘();
+		break;
+		case 1: x=new 다크나이트();
+		break;
+		case 2: x=new 보우마스터();
+		break;
+		case 3: x=new 신궁();
+		break;
+		case 4: x=new 불독();
+		break;
+		case 5: x=new 썬콜();
+		break;
+		case 6: x=new 나이트로드();
+		break;
+		case 7: x=new 섀도어();
+		break;
+		}	
 	}
 
 }

@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
+import MapleController.Main;
 
 public class BuffEffectButton extends JButton implements Runnable{
 	private Thread t;

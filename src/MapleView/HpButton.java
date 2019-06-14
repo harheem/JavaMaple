@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import MapleClass.Player;
+import MapleController.Main;
 
 public class HpButton extends JButton implements MouseListener, Runnable{
 

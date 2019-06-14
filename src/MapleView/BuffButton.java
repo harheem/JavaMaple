@@ -8,6 +8,7 @@ import javax.swing.JButton;
 
 import MapleClass.Player;
 import MapleClass.¸¶¹ý»ç;
+import MapleController.Main;
 
 public class BuffButton extends JButton implements MouseListener, Runnable{
 	private Player p;

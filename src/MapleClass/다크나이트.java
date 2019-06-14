@@ -4,10 +4,12 @@ import MapleWeapon.창;
 
 public class 다크나이트 extends 전사 {
 
+	private static String explanation="다크나이트: 죽지않는 암흑기사가 컨셉인 전사로 어둠을 바탕으로 한 공격으로 쉽게 죽지않는다";
 	private int initial_m_hp;
 	private int initial_m_mp;
 
 	public 다크나이트() {
+		this.explanation="설명";
 		this.w = new 창();
 		this.name = "다크나이트";
 		this.power = 120 + w.getWpPower()[w.getWpIndex()];
@@ -20,6 +22,9 @@ public class 다크나이트 extends 전사 {
 		imageIcon.add("../image/player/DarkKnight_e.png");
 		imageIcon.add("../image/player/m/DarkKnight_p_m.png");
 		imageIcon.add("../image/player/m/DarkKnight_e_m.png");
+	}
+	public static String getExplanation() {
+		return explanation;
 	}
 
 	@Override

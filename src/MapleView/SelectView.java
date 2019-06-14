@@ -1,11 +1,13 @@
 package MapleView;
 
 import java.awt.Color;
+
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -13,7 +15,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import MapleClass.Player;
+import MapleClass.*;
+import MapleController.Main;
 import control.UserDataList;
 
 public class SelectView extends JFrame{ //View에선 버튼의 생성과 추가 및 Location 설정. Button에서 버튼의 사이즈 및 아이콘 설정.
@@ -48,6 +51,7 @@ public class SelectView extends JFrame{ //View에선 버튼의 생성과 추가 및 Locatio
 				@Override
 				public void mouseEntered(MouseEvent e) {
 					sb.imgButton[num].setVisible(true); 
+					show_msg(num);
 				}
 
 				@Override
@@ -71,6 +75,34 @@ public class SelectView extends JFrame{ //View에선 버튼의 생성과 추가 및 Locatio
 			this.add(sb.imgButton[num]);
 			this.add(sb.nameButton[num]);
 			this.yLctn += 80;
+		}
+	}
+	public void show_msg(int num) {
+		switch(num) {
+		case 0:
+			sb.nameButton[num].setToolTipText(팔라딘.getExplanation());
+			break;
+		case 1:
+			sb.nameButton[num].setToolTipText(다크나이트.getExplanation());	
+			break;
+		case 2:
+			sb.nameButton[num].setToolTipText(보우마스터.getExplanation());	
+			break;
+		case 3:
+			sb.nameButton[num].setToolTipText(신궁.getExplanation());	
+			break;
+		case 4:
+			sb.nameButton[num].setToolTipText(불독.getExplanation());	
+			break;
+		case 5:
+			sb.nameButton[num].setToolTipText(썬콜.getExplanation());	
+			break;
+		case 6:
+			sb.nameButton[num].setToolTipText(나이트로드.getExplanation());	
+			break;
+		case 7:
+			sb.nameButton[num].setToolTipText(섀도어.getExplanation());	
+			break;
 		}
 	}
 	public void defaultViewSet()
