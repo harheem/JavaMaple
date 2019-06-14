@@ -169,4 +169,7 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 	public void setImageIcon(ArrayList<String> imageIcon) {
 		this.imageIcon = imageIcon;
 	}
+	public boolean isDead() {
+		return this.hp<=0;
+	}
 }

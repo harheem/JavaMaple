@@ -6,13 +6,14 @@ import MapleClass.*;
 import MapleView.*;
 import control.UserDataList;
 
-public class ControlFunc {
+public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 전부 non-static으로 바꿔만들기
 
-	public static Player p;
+	public Player p;
+	public Player e;
 	
 	public ControlFunc() {}
 	
-	public static void logInFunc() {
+	public void logInFunc() {
 		// login실행
 		Login lg = new Login(new UserDataList());
 		while (true) {
@@ -24,7 +25,7 @@ public class ControlFunc {
 		}
 	}
 
-	public static void selectFunc() {
+	public void selectFunc() {
 		// if(lg.getS() = true){
 		SelectView sv = new SelectView();
 		while (true) {
@@ -34,16 +35,16 @@ public class ControlFunc {
 				break;
 			}
 		}
-		creator(p,sv.getIndex());
+		creator(this.p,sv.getIndex());
 	}
 	
-	public static void checkViewFunc() {
+	public void checkViewFunc() {
 		
 		CheckView cv=new CheckView(new 다크나이트(), new 팔라딘(), 1);
 		
 	}
 
-	public static void battleFunc() {
+	public void battleFunc() {
 		Random rand = new Random();
 		int enem=rand.nextInt(8);
 		Player e=null;
@@ -55,6 +56,13 @@ public class ControlFunc {
 		p1.setEnemy(e1);
 		BattleView bv=new BattleView(p1, e1);		//인자 전달을 static값으로 보내주니까 static 메서드가 못씀.
 
+		while(true) {
+		if(p1.isDead())
+			//
+		if(e1.isDead())
+			//
+			break;
+		}
 		// e
 		// new BattleView(p1, e)
 		// if(p1.getHp == 0 { lose, if(e.getHP == 0) win
@@ -62,7 +70,7 @@ public class ControlFunc {
 		// new nextView();
 	}
 	
-	public static void creator(Player x,int i) {
+	public void creator(Player x,int i) {
 		switch (i) {
 		case 0: x=new 팔라딘();
 		break;

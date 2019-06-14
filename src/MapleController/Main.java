@@ -13,10 +13,11 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		//ControlFunc.logInFunc();
-		ControlFunc.selectFunc();
-		ControlFunc.checkViewFunc();
-		ControlFunc.battleFunc();
+		ControlFunc ct=new ControlFunc();
+		//ct.logInFunc();
+		ct.selectFunc();
+		ct.checkViewFunc();
+		ct.battleFunc();
 
 	}
 }
