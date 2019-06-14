@@ -41,7 +41,7 @@ public class SelectView extends JFrame{ //View에선 버튼의 생성과 추가 및 Locatio
 				@Override
 				public void mouseClicked(MouseEvent e) {
 					setIndex(num);					
-					// 다음 화면 넘어가기 기능. 어떻게 구현하는지... main에서 무한루프 체크문? View에서 쓰레드? 그 외?
+					// 다음 화면 넘어가기 기능.
 					dispose();
 				}
 
@@ -81,7 +81,7 @@ public class SelectView extends JFrame{ //View에선 버튼의 생성과 추가 및 Locatio
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setBackground(new Color(0, 0, 0, 0));
-		this.selectBackground = new ImageIcon(Main.class.getResource("../image/background/ClassSelect.png")).getImage();
+		this.selectBackground = new ImageIcon(Main.class.getResource("../image/background/ClassSelect.jpg")).getImage();
 		this.setVisible(true);
 		this.setLayout(null);
 	}

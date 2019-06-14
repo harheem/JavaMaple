@@ -23,7 +23,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import control.UserDataList;
-import MapleView.Main;
 
 public class Login extends JFrame {
 	private Image screenImage;

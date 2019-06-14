@@ -159,7 +159,7 @@ public abstract class Player implements Attackable, Reinforcable, Buffable{
 	public abstract void buffskill();
 	public abstract void buffRelease();
 	public Weapon getW() {
-		return w;
+		return this.w;
 	}
 	public ArrayList<String> getImageIcon() {
 		return imageIcon;
