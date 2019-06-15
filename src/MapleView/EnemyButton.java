@@ -39,6 +39,9 @@ public class EnemyButton extends JButton implements Runnable {
 		this.seb = seb;
 		this.beb = beb;
 		this.bi = bi;
+		this.bi.setBorderPainted(false);
+		this.bi.setContentAreaFilled(false);
+		this.bi.setFocusPainted(false);
 		this.skill2CoolTime = 0;
 		t.start();
 	}
