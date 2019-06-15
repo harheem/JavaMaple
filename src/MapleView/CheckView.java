@@ -56,13 +56,13 @@ public class CheckView extends JFrame {
 	}
 	
 	//Lose
-	//임의로 생성자를 구별하였습니다...
+	//임의의 파라미터로 생성자를 구별하였습니다...
 	public CheckView(Player p, Player e, int a ) {
 		this.p =p;
 		this.e =e;
 		this.stageNum = p.getW().getWpIndex() + 1; // 무기 index값+1이 스테이지 넘버
 		defaultViewSet();
-		this.creator();
+		this.loseCreator();
 		cpns = new Component[] {wb,lb,rb,bb,pb,eb};
 		this.loseSetLocation();
 		this.cpnsAdd();
@@ -77,7 +77,7 @@ public class CheckView extends JFrame {
 		this.e =e;
 		this.stageNum = p.getW().getWpIndex() + 1;// 무기 index값+1이 스테이지 넘버
 		defaultViewSet();
-		this.creator();
+		this.winCreator();
 		cpns = new Component[] {wb,lb,sb,pb,eb};
 		this.winSetLocation();
 		this.cpnsAdd();
@@ -225,8 +225,182 @@ public class CheckView extends JFrame {
 		
 	        }); 
 	}
-	//CheckView 마지막 생성자용
+	public void loseCreator() {
+        this.pb = new PlayerButton(p,null);
+        pb.setEnabled(false);
+        //플레이어 큰이미지
+		
+        this.eb = new EnemyButton(e);
+        //eb.setEnabled(false);
+		//에네미 큰이미지
+        this.wb = new WinButton();
+		//win 버튼(기능 없음 위치만)
+		
+		this.lb = new LoseButton();
+		//lose버튼(기능 없음 위치만)
+		
+	
+		
+		this.rb = new RestartButton(); 
+		//다시 하기 버튼(누르면 그 스테이지에서 다시시작)
+		rb.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				dispose();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+	});
+		
+		
+		this.bb = new BackButton();
+		//처음으로 버튼(누르면 selectView?로 넘어감) 
+		bb.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				dispose();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		
+		
+	        }); 
+		
+		
+		
+	}
+	
+	public void winCreator() {
+		
+		this.sb = new StartButton();
+		sb.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			
+		});
+		this.pb = new PlayerButton(p,null);
+        //플레이어 큰이미지
+		
+        this.eb = new EnemyButton(e);
+        eb.setEnabled(false);
+		//에네미 큰이미지
+        this.wb = new WinButton();
+		//win 버튼(기능 없음 위치만)
+		
+		this.lb = new LoseButton();
+		//lose버튼(기능 없음 위치만)
+		
+	
+		
+	}
+	
 	public void finalCreator() {
+		
+		this.sb = new StartButton();
+		sb.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			
+		});
 		
 		
 		this.pb = new PlayerButton(p,null);
