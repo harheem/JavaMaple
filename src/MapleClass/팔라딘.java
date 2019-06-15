@@ -4,7 +4,13 @@ import MapleWeapon.두손검;
 
 public class 팔라딘 extends 전사 {
 
-	private static String explanation="팔라딘: 절대 방어의 수호기사가 컨셉인 전사로 엘리멘탈의 힘을 충전하여 자신을 강화한다";
+	private static String explanation="팔라딘: 절대 방어의 수호기사가 컨셉인 전사로 엘리멘탈의 힘을 충전하여 자신을 강화한다."
+			+ "버프스킬: 위협\r\n" + 
+			"자신의 방어력을 25% 증가, 적의 방어력을 25% 감소\r\n" + 
+			"공격스킬1:  블래스트\r\n" + 
+			"MP 20소모 , 공격력\r\n" + 
+			"공격스킬2: 디바인차지 \r\n" + 
+			"MP50소모, 공격력";
 	private double enemy_initial_def;
 	
 	public 팔라딘() {
