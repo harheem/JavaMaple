@@ -9,10 +9,11 @@ import javax.swing.JButton;
 import MapleClass.Player;
 import MapleController.Main;
 
-public class SkillButton1 extends JButton implements MouseListener{ //쿨타임 없는데 넣으려면 쓰레드 추가해야합니다!!
+public class SkillButton1 extends JButton implements MouseListener,Runnable{ //쿨타임 없는데 넣으려면 쓰레드 추가해야합니다!!
 
 	private Player p;
 	private SkillEffectButton seb;
+	private Thread t;
 	public SkillButton1(Player p, SkillEffectButton seb) { //player의 SkillButton1
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
@@ -24,10 +25,25 @@ public class SkillButton1 extends JButton implements MouseListener{ //쿨타임 없�
 		this.setSize(60, 60);
 		this.addMouseListener(this);
 	}
+	public void run() {
+		this.setEnabled(false);
+		try {
+			Thread.sleep(2000); //쿨타임
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.setEnabled(true);
+	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		if(isEnabled()) //이 조건문 안달면 disabled 상태인데 눌러지는 경우가 있어서 한번 더 검사했습니다
+		{
 		p.skillAttack(0);
 		seb.start(p.getW().getSkillEffect().get(0));
+		t = new Thread(this);
+		t.start();
+		}
 		
 	}
 
