@@ -6,25 +6,26 @@ import javax.swing.JButton;
 import MapleClass.Player;
 import MapleController.Main;
 
-public class BuffEffectButton extends JButton implements Runnable{
+public class BuffEffectButton extends JButton implements Runnable {
 	private Thread t;
 	private Player p;
-	public BuffEffectButton(Player p)
-	{
+
+	public BuffEffectButton(Player p) {
 		this.p = p;
 		this.setBorderPainted(false);
-	    this.setContentAreaFilled(false);
-	    this.setFocusPainted(false);
+		this.setContentAreaFilled(false);
+		this.setFocusPainted(false);
 		this.setVisible(false);
-		this.setSize(200,200);
+		this.setSize(200, 200);
 	}
-	public void start(String s) 
-	{
+
+	public void start(String s) {
 		this.setVisible(true);
 		this.setIcon(new ImageIcon(Main.class.getResource(s)));
 		t = new Thread(this);
 		t.start();
 	}
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub

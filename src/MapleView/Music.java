@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import MapleController.Main;
 import javazoom.jl.player.Player;
 
-public class Music extends Thread{
+public class Music extends Thread{//FileInputStream과 BufferedInputStream를 이용한 뮤직클래스
 	
 	private Player player; //javazoom 라이브러리의 player입니다. 메이플의 플레이어아님!
 	private boolean isLoop; //무한 반복 할지의 여부
