@@ -40,7 +40,7 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 	
 	public void checkViewFunc() {
 		
-		CheckView cv=new CheckView(new 다크나이트(), new 팔라딘(), 1);
+		CheckView cv=new CheckView(new 다크나이트(), new 팔라딘());
 		
 	}
 
