@@ -4,13 +4,7 @@ import MapleWeapon.아대;
 
 public class 나이트로드 extends 도적 {
 
-	private static String explanation="나이트로드: 표창을 사용하는 도적으로 원거리에서 강력하면서도 빠른 공격을 퍼붓는다."
-			+ "버프스킬: 섀도우파트너\r\n" + 
-			"자신의 공격력을 25%증가\r\n" + 
-			"공격스킬1: 쿼드러플스로우\r\n" + 
-			"MP30소모\r\n" + 
-			"공격스킬2: 써든레이드\r\n" + 
-			"MP90소모";
+	private static String explanation="나이트로드: 표창을 사용하는 도적으로 원거리에서 강력하면서도 빠른 공격을 퍼붓는다";
 	
 	public 나이트로드() {
 		this.w = new 아대();

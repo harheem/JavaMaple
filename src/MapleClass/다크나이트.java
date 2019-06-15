@@ -4,13 +4,7 @@ import MapleWeapon.창;
 
 public class 다크나이트 extends 전사 {
 
-	private static String explanation="다크나이트: 죽지않는 암흑기사가 컨셉인 전사로 어둠을 바탕으로 한 공격으로 쉽게 죽지않는다."
-			+ "버프 스킬: 하이퍼바디\r\n" + 
-			"자신의 HP와 MP를 50% 증가\r\n" + 
-			"공격 스킬1: 다크임페일\r\n" + 
-			"MP 20소모 , 공격력  \r\n" + 
-			"공격 스킬2: 궁그닐 디센트\r\n" + 
-			"MP 50소모 , 공격력";
+	private static String explanation="다크나이트: 죽지않는 암흑기사가 컨셉인 전사로 어둠을 바탕으로 한 공격으로 쉽게 죽지않는다";
 	private int initial_m_hp;
 	private int initial_m_mp;
 
