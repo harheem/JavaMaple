@@ -8,7 +8,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -22,17 +24,17 @@ import MapleController.*;
 
 public class CheckView extends JFrame {
     
-	StartButton sb; //
-	VSButton vb; 
+	//StartButton sb; //
+	//VSButton vb; 
 	PlayerButton pb;
 	EnemyButton eb;
 	Player p,e;
-	WinButton wb;
-	LoseButton lb;
-	RestartButton rb;
-	BackButton bb;
-	JLabel a,b,c;
-	BattleView bv;
+	//WinButton wb;
+	//LoseButton lb;
+	//RestartButton rb;
+	//BackButton bb;
+	//JLabel a,b,c;
+	//BattleView bv;
 	private int stageNum;
 	private Component[] cpns;
     private Image screenImage;
@@ -42,6 +44,13 @@ public class CheckView extends JFrame {
 	private String lose;
 	
 	
+	JButton sb = new JButton(); //startButton
+	JButton vb = new JButton(); // VSButton
+	JButton wb = new JButton(); //WinButton
+	JButton lb = new JButton(); //LoseButton
+	JButton rb = new JButton(); // RestartButton
+	JButton bb = new JButton(); // BackButton
+   
 	//BattleView 이전
 	public CheckView(Player p, Player e) { 
 		this.p = p;
@@ -101,7 +110,13 @@ public class CheckView extends JFrame {
 		
 	
 	public void creator() {
-		this.sb = new StartButton();
+		//this.sb = new StartButton();
+		//배틀뷰로 넘어가는 스타트 버튼
+		sb.setBorderPainted(false);
+	    sb.setContentAreaFilled(false);
+	    sb.setFocusPainted(false);
+	    sb.setSize(310, 160);
+	    sb.setIcon(new ImageIcon(Main.class.getResource("../image/check/startButton.png")));
 		sb.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				dispose();
@@ -134,9 +149,12 @@ public class CheckView extends JFrame {
 			
 		});
 		
-		//다음화면(배틀뷰)로 넘어가는 버튼
-		
-		this.vb = new VSButton();
+		//this.vb = new VSButton();
+		vb.setBorderPainted(false);
+		vb.setContentAreaFilled(false);
+		vb.setIcon(new ImageIcon(Main.class.getResource("../image/check/vsimg.png")));
+		vb.setFocusPainted(false);
+		vb.setSize(160, 110); //임시 
 		// vs 버튼(기능 없음 위치만)
 		
 		this.pb = new PlayerButton(p,null);
@@ -146,84 +164,7 @@ public class CheckView extends JFrame {
 		this.eb = new EnemyButton(e);
 		
 		//에네미의 큰 이미지를 가져와야함
-		
-		this.wb = new WinButton();
-		
-		//win 버튼(기능 없음 위치만)
-		
-		this.lb = new LoseButton();
-		
-		//lose 버튼(기능 없음 위치만)
-		this.rb = new RestartButton(); //다시 하기 버튼(누르면 그 스테이지에서 다시시작)
-		rb.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				dispose();
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
-	});
-		
-		
-		this.bb = new BackButton();
-		//처음으로 버튼(누르면 selectView?로 넘어감) 
-		bb.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				dispose();
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		
-		
-	        }); 
+			
 	}
 	public void loseCreator() {
         this.pb = new PlayerButton(p,null);
@@ -231,18 +172,34 @@ public class CheckView extends JFrame {
         //플레이어 큰이미지
 		
         this.eb = new EnemyButton(e);
-        //eb.setEnabled(false);
 		//에네미 큰이미지
-        this.wb = new WinButton();
+        //this.wb = new WinButton();
+        wb.setBorderPainted(false);
+		wb.setContentAreaFilled(false);
+		wb.setFocusPainted(false);
+		wb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Winicon.png")));
+		wb.setSize(240, 140); //임시 
+		//win 버튼(기능 없음 위치만)
 		//win 버튼(기능 없음 위치만)
 		
-		this.lb = new LoseButton();
+		//this.lb = new LoseButton();
+		lb.setBorderPainted(false);
+		lb.setContentAreaFilled(false);
+		lb.setFocusPainted(false);
+		lb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Loseicon.png")));
+		lb.setSize(240, 140); //임시 
 		//lose버튼(기능 없음 위치만)
 		
 	
 		
-		this.rb = new RestartButton(); 
+		//this.rb = new RestartButton(); 
 		//다시 하기 버튼(누르면 그 스테이지에서 다시시작)
+		
+		rb.setBorderPainted(false);
+	    rb.setContentAreaFilled(false);
+	    rb.setFocusPainted(false);
+	    rb.setIcon(new ImageIcon(Main.class.getResource("../image/check/restartButton.png")));
+	    rb.setSize(310, 160);
 		rb.addMouseListener(new MouseListener() {
 
 			@Override
@@ -276,8 +233,13 @@ public class CheckView extends JFrame {
 	});
 		
 		
-		this.bb = new BackButton();
+		//this.bb = new BackButton();
 		//처음으로 버튼(누르면 selectView?로 넘어감) 
+		bb.setBorderPainted(false);
+	    bb.setContentAreaFilled(false);
+	    bb.setFocusPainted(false);
+	    bb.setIcon(new ImageIcon(Main.class.getResource("../image/check/backButton.png")));
+	    bb.setSize(310, 160);
 		bb.addMouseListener(new MouseListener() {
 
 			@Override
@@ -319,7 +281,12 @@ public class CheckView extends JFrame {
 	
 	public void winCreator() {
 		
-		this.sb = new StartButton();
+		//this.sb = new StartButton();
+		sb.setBorderPainted(false);
+	    sb.setContentAreaFilled(false);
+	    sb.setFocusPainted(false);
+	    sb.setIcon(new ImageIcon(Main.class.getResource("../image/check/startButton.png")));
+	    sb.setSize(310, 160);
 		sb.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				dispose();
@@ -357,10 +324,20 @@ public class CheckView extends JFrame {
         this.eb = new EnemyButton(e);
         eb.setEnabled(false);
 		//에네미 큰이미지
-        this.wb = new WinButton();
+        //this.wb = new WinButton();
+        wb.setBorderPainted(false);
+		wb.setContentAreaFilled(false);
+		wb.setFocusPainted(false);
+		wb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Winicon.png")));
+		wb.setSize(240, 140); //임시 
 		//win 버튼(기능 없음 위치만)
 		
-		this.lb = new LoseButton();
+		//this.lb = new LoseButton();
+		lb.setBorderPainted(false);
+		lb.setContentAreaFilled(false);
+		lb.setFocusPainted(false);
+		lb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Loseicon.png")));
+		lb.setSize(240, 140); //임시 
 		//lose버튼(기능 없음 위치만)
 		
 	
@@ -369,52 +346,27 @@ public class CheckView extends JFrame {
 	
 	public void finalCreator() {
 		
-		this.sb = new StartButton();
-		sb.addMouseListener(new MouseListener() {
-			public void mouseClicked(MouseEvent e) {
-				dispose();
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			
-		});
-		
 		
 		this.pb = new PlayerButton(p,null);
 		
 		//플레이어 큰 이미지를 가져와야함 
 		
-        this.wb = new WinButton();
-		
+        //this.wb = new WinButton();
+		wb.setBorderPainted(false);
+		wb.setContentAreaFilled(false);
+		wb.setFocusPainted(false);
+		wb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Winicon.png")));
+		wb.setSize(240, 140); //임시 
 		//win 버튼(기능 없음 위치만)
 		
-		this.lb = new LoseButton();
 		
 		//lose 버튼(기능 없음 위치만)
-		this.rb = new RestartButton(); //다시 하기 버튼(누르면 그 스테이지에서 다시시작)
+		//this.rb = new RestartButton(); //다시 하기 버튼(누르면 그 스테이지에서 다시시작)
+		rb.setBorderPainted(false);
+	    rb.setContentAreaFilled(false);
+	    rb.setFocusPainted(false);
+	    rb.setIcon(new ImageIcon(Main.class.getResource("../image/check/restartButton.png")));
+	    rb.setSize(310, 160);
 		rb.addMouseListener(new MouseListener() {
 
 			@Override
@@ -448,8 +400,13 @@ public class CheckView extends JFrame {
 	});
 		
 		
-		this.bb = new BackButton();
+		//this.bb = new BackButton();
 		//처음으로 버튼(누르면 selectView?로 넘어감) 
+		bb.setBorderPainted(false);
+	    bb.setContentAreaFilled(false);
+	    bb.setFocusPainted(false);
+	    bb.setIcon(new ImageIcon(Main.class.getResource("../image/check/backButton.png")));
+	    bb.setSize(310, 160);
 		bb.addMouseListener(new MouseListener() {
 
 			@Override
@@ -521,14 +478,14 @@ public class CheckView extends JFrame {
 	}
 	
 	public void cpnsSetLocation() { 
-		this.wb.setLocation(120, 80);
-		this.lb.setLocation(870, 100 );
-		this.sb.setLocation(490 ,500);
-		this.vb.setLocation(550 ,400);
-		this.pb.setLocation(40, 80);
-		this.eb.setLocation(790, 110);
-		this.rb.setLocation(490, 500);
-		this.bb.setLocation(490, 400);
+		wb.setLocation(120, 80);
+		lb.setLocation(870, 100 );
+		sb.setLocation(490 ,500);
+		vb.setLocation(550 ,400);
+		pb.setLocation(40, 80);
+		eb.setLocation(790, 110);
+		rb.setLocation(490, 500);
+		bb.setLocation(490, 400);
 		
 	}
 	
