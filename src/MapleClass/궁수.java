@@ -5,8 +5,8 @@ import Maple.Buffable;
 public abstract class ±Ã¼ö extends Player implements Buffable {
 	protected double initial_power;
 	public ±Ã¼ö() {
-		this.m_hp = 750;
-		this.m_mp = 300;
+		this.m_hp = 1200;
+		this.m_mp = 600;
 		this.hp = this.m_hp;
 		this.mp = this.m_mp;
 		this.buffSkillName = "»þÇÁ¾ÆÀÌÁî";
