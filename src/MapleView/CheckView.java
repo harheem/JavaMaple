@@ -17,41 +17,28 @@ import javax.swing.JLabel;
 import MapleClass.Player;
 import MapleController.*;
 //import MapleView.BattleView;
-//플레이어가 직업을 선택하고 난 다음 화면임
-//캐릭터 큰거 2개와 vs 버튼, 시작하기 버튼이 들어감
-
-//nameimg도 같이보이면 좋을것같음
 
 public class CheckView extends JFrame {
     
-	//StartButton sb; //
-	//VSButton vb; 
 	PlayerButton pb;
 	EnemyButton eb;
 	Player p,e;
-	//WinButton wb;
-	//LoseButton lb;
-	//RestartButton rb;
-	//BackButton bb;
-	//JLabel a,b,c;
-	//BattleView bv;
 	private int stageNum;
 	private Component[] cpns;
     private Image screenImage;
 	private Image selectBackground;
 	private Graphics screenGraphic;
-	private int win;
-	private String lose;
+	private int win; //생성자 구별하기위한 파라미터 
+	private String lose; // 생성자 구별하기위한 파라미터	
 	
-	
-	JButton sb = new JButton(); //startButton
-	JButton vb = new JButton(); // VSButton
-	JButton wb = new JButton(); //WinButton
-	JButton lb = new JButton(); //LoseButton
-	JButton rb = new JButton(); // RestartButton
-	JButton bb = new JButton(); // BackButton
+	JButton sb = new JButton(); //startButton 누르면 배틀뷰로 넘어감
+	JButton vb = new JButton(); // VSButton 기능없음 
+	JButton wb = new JButton(); //WinButton 기능없음
+	JButton lb = new JButton(); //LoseButton 기능없음
+	JButton rb = new JButton(); // RestartButton 누르면 졌던 스테이지의 배틀뷰로 다시 넘어감
+	JButton bb = new JButton(); // BackButton 누르면 셀렉트뷰로 넘어감 
    
-	//BattleView 이전
+	//CheckView
 	public CheckView(Player p, Player e) { 
 		this.p = p;
 		this.e = e;
@@ -64,7 +51,7 @@ public class CheckView extends JFrame {
 		this.setVisible(true);
 	}
 	
-	//Lose
+	//LoseView
 	//임의의 파라미터로 생성자를 구별하였습니다...
 	public CheckView(Player p, Player e, int a ) {
 		this.p =p;
@@ -79,7 +66,7 @@ public class CheckView extends JFrame {
 		
 		
 	}
-	//Win
+	//WinView
 	//얘도요...
 	public CheckView(Player p, Player e, String w ) {
 		this.p =p;
@@ -92,8 +79,7 @@ public class CheckView extends JFrame {
 		this.cpnsAdd();
 		this.setVisible(true);
 	}
-	    
-	
+	    	
 	//finalView
 	public CheckView(Player p) {
 		this.p =p;
@@ -103,15 +89,10 @@ public class CheckView extends JFrame {
 		cpns = new Component[] {wb,rb,bb,pb};
 		this.finalSetLocation();
 		this.cpnsAdd();
-		this.setVisible(true);
-			
-	}
-		
-		
+		this.setVisible(true);			
+	}	
 	
 	public void creator() {
-		//this.sb = new StartButton();
-		//배틀뷰로 넘어가는 스타트 버튼
 		sb.setBorderPainted(false);
 	    sb.setContentAreaFilled(false);
 	    sb.setFocusPainted(false);
@@ -145,55 +126,38 @@ public class CheckView extends JFrame {
 				// TODO Auto-generated method stub
 				
 			}
-
 			
 		});
 		
-		//this.vb = new VSButton();
 		vb.setBorderPainted(false);
 		vb.setContentAreaFilled(false);
 		vb.setIcon(new ImageIcon(Main.class.getResource("../image/check/vsimg.png")));
 		vb.setFocusPainted(false);
-		vb.setSize(160, 110); //임시 
-		// vs 버튼(기능 없음 위치만)
+		vb.setSize(160, 110);
 		
 		this.pb = new PlayerButton(p,null);
-	
-		//플레이어 큰 이미지를 가져와야함 
 		
 		this.eb = new EnemyButton(e);
 		
-		//에네미의 큰 이미지를 가져와야함
 			
 	}
 	public void loseCreator() {
         this.pb = new PlayerButton(p,null);
         pb.setEnabled(false);
-        //플레이어 큰이미지
 		
         this.eb = new EnemyButton(e);
-		//에네미 큰이미지
-        //this.wb = new WinButton();
+       
         wb.setBorderPainted(false);
 		wb.setContentAreaFilled(false);
 		wb.setFocusPainted(false);
 		wb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Winicon.png")));
-		wb.setSize(240, 140); //임시 
-		//win 버튼(기능 없음 위치만)
-		//win 버튼(기능 없음 위치만)
+		wb.setSize(240, 140); 
 		
-		//this.lb = new LoseButton();
 		lb.setBorderPainted(false);
 		lb.setContentAreaFilled(false);
 		lb.setFocusPainted(false);
 		lb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Loseicon.png")));
-		lb.setSize(240, 140); //임시 
-		//lose버튼(기능 없음 위치만)
-		
-	
-		
-		//this.rb = new RestartButton(); 
-		//다시 하기 버튼(누르면 그 스테이지에서 다시시작)
+		lb.setSize(240, 140); 
 		
 		rb.setBorderPainted(false);
 	    rb.setContentAreaFilled(false);
@@ -231,10 +195,7 @@ public class CheckView extends JFrame {
 				// TODO Auto-generated method stub
 			}
 	});
-		
-		
-		//this.bb = new BackButton();
-		//처음으로 버튼(누르면 selectView?로 넘어감) 
+				
 		bb.setBorderPainted(false);
 	    bb.setContentAreaFilled(false);
 	    bb.setFocusPainted(false);
@@ -271,17 +232,13 @@ public class CheckView extends JFrame {
 				// TODO Auto-generated method stub
 				
 			}
-		
-		
+			
 	        }); 
-		
-		
-		
+				
 	}
 	
 	public void winCreator() {
-		
-		//this.sb = new StartButton();
+	
 		sb.setBorderPainted(false);
 	    sb.setContentAreaFilled(false);
 	    sb.setFocusPainted(false);
@@ -315,33 +272,26 @@ public class CheckView extends JFrame {
 				// TODO Auto-generated method stub
 				
 			}
-
 			
 		});
 		this.pb = new PlayerButton(p,null);
-        //플레이어 큰이미지
+       
 		
         this.eb = new EnemyButton(e);
         eb.setEnabled(false);
-		//에네미 큰이미지
-        //this.wb = new WinButton();
+        
         wb.setBorderPainted(false);
 		wb.setContentAreaFilled(false);
 		wb.setFocusPainted(false);
 		wb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Winicon.png")));
-		wb.setSize(240, 140); //임시 
-		//win 버튼(기능 없음 위치만)
+		wb.setSize(240, 140); 
 		
-		//this.lb = new LoseButton();
 		lb.setBorderPainted(false);
 		lb.setContentAreaFilled(false);
 		lb.setFocusPainted(false);
 		lb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Loseicon.png")));
-		lb.setSize(240, 140); //임시 
-		//lose버튼(기능 없음 위치만)
-		
-	
-		
+		lb.setSize(240, 140); 
+				
 	}
 	
 	public void finalCreator() {
@@ -349,19 +299,12 @@ public class CheckView extends JFrame {
 		
 		this.pb = new PlayerButton(p,null);
 		
-		//플레이어 큰 이미지를 가져와야함 
-		
-        //this.wb = new WinButton();
 		wb.setBorderPainted(false);
 		wb.setContentAreaFilled(false);
 		wb.setFocusPainted(false);
 		wb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Winicon.png")));
-		wb.setSize(240, 140); //임시 
-		//win 버튼(기능 없음 위치만)
-		
-		
-		//lose 버튼(기능 없음 위치만)
-		//this.rb = new RestartButton(); //다시 하기 버튼(누르면 그 스테이지에서 다시시작)
+		wb.setSize(240, 140);
+	
 		rb.setBorderPainted(false);
 	    rb.setContentAreaFilled(false);
 	    rb.setFocusPainted(false);
@@ -399,9 +342,6 @@ public class CheckView extends JFrame {
 			}
 	});
 		
-		
-		//this.bb = new BackButton();
-		//처음으로 버튼(누르면 selectView?로 넘어감) 
 		bb.setBorderPainted(false);
 	    bb.setContentAreaFilled(false);
 	    bb.setFocusPainted(false);
