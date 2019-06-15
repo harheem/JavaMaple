@@ -21,7 +21,7 @@ public class MpProgressBar extends JProgressBar implements Runnable{
 		this.setStringPainted(true);
 		this.setForeground(Color.BLUE);
 		this.setBackground(Color.LIGHT_GRAY);
-		this.setSize(200,30);
+		this.setSize(200,20);
 		start();
 	}
 	public void start()

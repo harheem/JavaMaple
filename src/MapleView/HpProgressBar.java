@@ -20,7 +20,7 @@ public class HpProgressBar extends JProgressBar implements Runnable{
 		this.setStringPainted(true);
 		this.setForeground(Color.RED);
 		this.setBackground(Color.LIGHT_GRAY);
-		this.setSize(200,30);
+		this.setSize(200,20);
 		start();
 	}
 	public void start()

@@ -55,6 +55,9 @@ public class Login extends JFrame {
 		makeButton();
 		makeTextField();
 		makeActionListener();
+		
+		Music loginmusic = new Music("Login.mp3", true);
+		loginmusic.start();
 	}
 
 	public void paint(Graphics g) {
