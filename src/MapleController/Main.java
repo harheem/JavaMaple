@@ -14,10 +14,13 @@ public class Main {
 	public static void main(String[] args) {
 
 		ControlFunc ct=new ControlFunc();
-		//ct.logInFunc();
+		
+		ct.logInFunc();
 		ct.selectFunc();
-		ct.checkViewFunc();
-		ct.battleFunc();
+		for(int i=0;i<2;i++) {
+			ct.checkViewFunc();
+			ct.battleFunc();
+		}
 
 	}
 }

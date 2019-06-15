@@ -4,7 +4,13 @@ import MapleWeapon.스태프;
 
 public class 썬콜 extends 마법사 {
 
-	private static String explanation="썬콜: 얼음과 전기속성의 마법을 사용하는 마법사로 결빙된 적에게 크리티컬데미지로 공격한다";
+	private static String explanation="썬콜: 얼음과 전기속성의 마법을 사용하는 마법사로 결빙된 적에게 크리티컬데미지로 공격한다."
+			+ "버프스킬: 매직가드\r\n" + 
+			"데미지의 60%를 MP로 대체\r\n" + 
+			"공격스킬1: 콜드빔\r\n" + 
+			"MP50소모\r\n" + 
+			"공격스킬2: 라이트닝 스피어\r\n" + 
+			"MP150소모";
 	
 	public 썬콜() {
 		this.explanation="설명";

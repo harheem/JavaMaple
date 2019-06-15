@@ -4,7 +4,13 @@ import MapleWeapon.완드;
 
 public class 불독 extends 마법사 {
 
-	private static String explanation="불독: 불과 독속성의 치명적인 마법을 사용하는 마법사로 적에게 지속적인 피해를 입힌다";
+	private static String explanation="불독: 불과 독속성의 치명적인 마법을 사용하는 마법사로 적에게 지속적인 피해를 입힌다."
+			+ "버프스킬: 매직가드\r\n" + 
+			"데미지의 60%를 MP로 대체\r\n" + 
+			"공격스킬1: 페럴라이즈 \r\n" + 
+			"MP50소모\r\n" + 
+			"공격스킬2: 메테오\r\n" + 
+			"MP150소모\r\n";
 	
 	public 불독() {
 		this.explanation="설명";

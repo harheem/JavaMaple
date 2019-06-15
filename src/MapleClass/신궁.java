@@ -4,7 +4,13 @@ import MapleWeapon.석궁;
 
 public class 신궁 extends 궁수 {
 
-	private static String explanation="신궁: 정확한 원샷 원킬의 스나이퍼가 컨셉인 궁수로 강력한 한발을 적에게 선사한다";
+	private static String explanation="신궁: 정확한 원샷 원킬의 스나이퍼가 컨셉인 궁수로 강력한 한발을 적에게 선사한다."
+			+ "버프스킬: 샤프아이즈\r\n" + 
+			"자신의 공격력을 25%증가\r\n" + 
+			"공격스킬1: 피어싱\r\n" + 
+			"MP30소모\r\n" + 
+			"공격스킬2: 스나이핑\r\n" + 
+			"MP90소모";
 	
 	public 신궁() {
 		this.explanation="설명";
