@@ -15,9 +15,9 @@ public class Main {
 
 		ControlFunc ct=new ControlFunc();
 		//ct.logInFunc();
-		ct.selectFunc();
+		//ct.selectFunc();
 		ct.checkViewFunc();
-		ct.battleFunc();
+		//ct.battleFunc();
 
 	}
 }

@@ -4,21 +4,20 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.MouseAdapter;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 import MapleClass.Player;
-import MapleController.*;
+import MapleController.Main;
 //import MapleView.BattleView;
 
-public class CheckView extends JFrame {
+public class CheckView extends JFrame implements ActionListener{
     
 	PlayerButton pb;
 	EnemyButton eb;
@@ -98,36 +97,7 @@ public class CheckView extends JFrame {
 	    sb.setFocusPainted(false);
 	    sb.setSize(310, 160);
 	    sb.setIcon(new ImageIcon(Main.class.getResource("../image/check/startButton.png")));
-		sb.addMouseListener(new MouseListener() {
-			public void mouseClicked(MouseEvent e) {
-				dispose();
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		});
+	    sb.addActionListener(this);
 		
 		vb.setBorderPainted(false);
 		vb.setContentAreaFilled(false);
@@ -164,76 +134,14 @@ public class CheckView extends JFrame {
 	    rb.setFocusPainted(false);
 	    rb.setIcon(new ImageIcon(Main.class.getResource("../image/check/restartButton.png")));
 	    rb.setSize(310, 160);
-		rb.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				dispose();
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
-	});
+		rb.addActionListener(this);
 				
 		bb.setBorderPainted(false);
 	    bb.setContentAreaFilled(false);
 	    bb.setFocusPainted(false);
 	    bb.setIcon(new ImageIcon(Main.class.getResource("../image/check/backButton.png")));
 	    bb.setSize(310, 160);
-		bb.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				dispose();
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-	        }); 
+		bb.addActionListener(this);
 				
 	}
 	
@@ -244,36 +152,7 @@ public class CheckView extends JFrame {
 	    sb.setFocusPainted(false);
 	    sb.setIcon(new ImageIcon(Main.class.getResource("../image/check/startButton.png")));
 	    sb.setSize(310, 160);
-		sb.addMouseListener(new MouseListener() {
-			public void mouseClicked(MouseEvent e) {
-				dispose();
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		});
+	    sb.addActionListener(this);
 		this.pb = new PlayerButton(p,null);
        
 		
@@ -310,77 +189,13 @@ public class CheckView extends JFrame {
 	    rb.setFocusPainted(false);
 	    rb.setIcon(new ImageIcon(Main.class.getResource("../image/check/restartButton.png")));
 	    rb.setSize(310, 160);
-		rb.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				dispose();
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
-	});
-		
+		rb.addActionListener(this);
 		bb.setBorderPainted(false);
 	    bb.setContentAreaFilled(false);
 	    bb.setFocusPainted(false);
 	    bb.setIcon(new ImageIcon(Main.class.getResource("../image/check/backButton.png")));
 	    bb.setSize(310, 160);
-		bb.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				dispose();
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		
-		
-	        }); 
+		bb.addActionListener(this);
 		//this.a = new JLabel();
 		//a.setText("Stage1 : "+ bv.getTime() + " √ ");
 		//b.setText("Stage2 : "+ bv.getTime() + " √ "); 
@@ -450,5 +265,11 @@ public class CheckView extends JFrame {
 		this.bb.setLocation(490, 400);
 		this.pb.setLocation(40, 80);
 		this.eb.setLocation(790, 110);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		dispose();
+		
 	}
 }	
