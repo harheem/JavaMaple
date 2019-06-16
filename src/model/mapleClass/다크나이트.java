@@ -1,6 +1,6 @@
-package MapleClass;
+package model.mapleClass;
 
-import MapleWeapon.창;
+import model.mapleWeapon.창;
 
 public class 다크나이트 extends 전사 {
 
@@ -39,8 +39,8 @@ public class 다크나이트 extends 전사 {
 			return;
 		else {
 			this.mp-=buffSkillMp;
-			this.m_hp = (int) (this.m_hp * 1.25);
-			this.m_mp = (int) (this.m_mp * 1.25);
+			this.m_hp = (int) (this.m_hp * 1.5);
+			this.m_mp = (int) (this.m_mp * 1.5);
 			this.buffTime = 3;
 		}
 	}
