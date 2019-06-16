@@ -10,8 +10,11 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 
 	private Player p;
 	private Player e;
+	private int playerIndex;
+	private int enemyIndex;
+	private int round;
 	
-	public ControlFunc() {}
+	public ControlFunc() {this.round = 1;}
 	
 	public void logInFunc() {
 		// login실행
@@ -35,14 +38,14 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 				break;
 			}
 		}
-		creator(this.p,sv.getIndex());
+		playerIndex = sv.getIndex();
+		p = creator(playerIndex);
 	}
 	
 	public void checkViewFunc() {
 		Random rand = new Random();
-		int enem=rand.nextInt(8);
-		creator(this.e,enem);
-		
+		enemyIndex=rand.nextInt(8);
+		e = creator(enemyIndex);
 		CheckView cv=new CheckView(this.p, this.e);
 		while (true) {
 			if (cv.isVisible())
@@ -51,29 +54,67 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 				break;
 			}
 		}
+		for(int i =1; i<round; i++) e.reinforce();
 		
 	}
 
-	public void battleFunc() {
+	public boolean battleFunc() {
 		this.e.setEnemy(this.p);
 		this.p.setEnemy(this.e);
-		BattleView bv=new BattleView(this.p, this.e);		//인자 전달을 static값으로 보내주니까 static 메서드가 못씀.
+		BattleView bv = new BattleView(this.p, this.e);		//인자 전달을 static값으로 보내주니까 static 메서드가 못씀.
 
 		while(true) {
-		if(p.isDead())
-			//
-		if(e.isDead())
-			//
-			break;
+		if(p.isDead()) //졌으면
+		{
+			bv.dispose();
+			bv.threadStop();
+			CheckView temp = new CheckView(p,e,false);
+			while(temp.isVisible()) System.out.print(""); //입력 기다리기
+			if(!temp.restart()) //다시 싸울거면
+			{
+				p = creator(playerIndex); //능력치 초기화하기
+				e = creator(enemyIndex); //능력치 초기화하기
+				for(int i=1; i<round; i++) //해당 라운드만큼 다시 강화하기
+				{
+					p.reinforce();
+					e.reinforce();
+				}
+				return battleFunc();
+			}
+			else return true;
+		}	
+		else if(e.isDead()) //이겼으면
+		{
+			bv.dispose();
+			bv.threadStop();
+			CheckView temp = new CheckView(p,e,true); //이겼다는 화면 보이기
+			try {
+				Thread.sleep(3000); //3초동안 멈추기
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			temp.dispose();
+			if(round==3)
+			{
+				CheckView finCheck = new CheckView(p); //final view
+				while(finCheck.isVisible()) System.out.print(""); //입력 기다리기
+				return finCheck.restart(); //다시하거나 종료하기
+			}
+			else
+			{
+				round++;
+				p.reinforce(); //강화하기
+				checkViewFunc(); //다음 라운드 시작화면 보이기
+				return battleFunc(); //다시호출
+			}
 		}
-		// e
-		// new BattleView(p1, e)
-		// if(p1.getHp == 0 { lose, if(e.getHP == 0) win
-		// BattleView.dispose();
-		// new nextView();
+		System.out.print(""); //이거없으면 while문이 실행안돼요..
+		}
 	}
 	
-	public void creator(Player x,int i) {
+	private Player creator(int i) {
+		Player x = null;
 		switch (i) {
 		case 0: x=new 팔라딘();
 		break;
@@ -92,6 +133,6 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 		case 7: x=new 섀도어();
 		break;
 		}	
+		return x;
 	}
-
 }

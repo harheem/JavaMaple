@@ -169,7 +169,7 @@ public class BattleView extends JFrame implements Runnable { // View에선 버튼의 
 		rt.setBackground(Color.black);
 		rt.setHorizontalAlignment(SwingConstants.CENTER);
 		rt.setFont(new Font("Gothic", Font.ITALIC, 30));
-		rt.setSize(130, 50);
+		rt.setSize(150, 50);
 		t.start();
 		return rt;
 	}
@@ -293,4 +293,11 @@ public class BattleView extends JFrame implements Runnable { // View에선 버튼의 
 	public int getTime() {
 		return this.time;
 	} // 타이머 시간 return 나중에 기록으로 쓰시려면 Control에서 배틀뷰 닫을때 타임을 받아가면 될 것 같습니다!
+	
+	public void threadStop() //게임 종료시 쓰레드를 모두 종료시키는 메서드
+	{
+		t.stop(); //타이머쓰레드
+		p2.stop(); //에너미 버튼 쓰레드 
+	}
 }
+

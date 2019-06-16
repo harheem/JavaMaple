@@ -29,6 +29,7 @@ public class CheckView extends JFrame implements ActionListener{
 	private Graphics screenGraphic;
 	private int win; //생성자 구별하기위한 파라미터 
 	private String lose; // 생성자 구별하기위한 파라미터	
+	private boolean restart; //다시 시작할지를 결정
 	
 	JButton sb = new JButton(); //startButton 누르면 배틀뷰로 넘어감
 	JButton vb = new JButton(); // VSButton 기능없음 
@@ -37,7 +38,7 @@ public class CheckView extends JFrame implements ActionListener{
 	JButton rb = new JButton(); // RestartButton 누르면 졌던 스테이지의 배틀뷰로 다시 넘어감
 	JButton bb = new JButton(); // BackButton 누르면 셀렉트뷰로 넘어감 
    
-	//CheckView
+	//배틀 화면 시작하기
 	public CheckView(Player p, Player e) { 
 		this.p = p;
 		this.e = e;
@@ -50,35 +51,30 @@ public class CheckView extends JFrame implements ActionListener{
 		this.setVisible(true);
 	}
 	
-	//LoseView
-	//임의의 파라미터로 생성자를 구별하였습니다...
-	public CheckView(Player p, Player e, int a ) {
+	//이기거나 졌을 때
+	public CheckView(Player p, Player e, boolean win) {
 		this.p =p;
 		this.e =e;
 		this.stageNum = p.getW().getWpIndex() + 1; // 무기 index값+1이 스테이지 넘버
 		defaultViewSet();
-		this.loseCreator();
+		if(win) //이겼을 때
+		{
+			this.winCreator();
+			this.winSetLocation();
+		}
+		else //졌을 때
+		{
+			this.loseCreator();
+			this.loseSetLocation();
+		}
 		cpns = new Component[] {wb,lb,rb,bb,pb,eb};
-		this.loseSetLocation();
+		this.buttonAddActionListener(); //rb랑 bb에 리스너달기
 		this.cpnsAdd();
 		this.setVisible(true);
 		
 		
 	}
-	//WinView
-	//얘도요...
-	public CheckView(Player p, Player e, String w ) {
-		this.p =p;
-		this.e =e;
-		this.stageNum = p.getW().getWpIndex() + 1;// 무기 index값+1이 스테이지 넘버
-		defaultViewSet();
-		this.winCreator();
-		cpns = new Component[] {wb,lb,sb,pb,eb};
-		this.winSetLocation();
-		this.cpnsAdd();
-		this.setVisible(true);
-	}
-	    	
+	
 	//finalView
 	public CheckView(Player p) {
 		this.p =p;
@@ -88,6 +84,7 @@ public class CheckView extends JFrame implements ActionListener{
 		cpns = new Component[] {wb,rb,bb,pb};
 		this.finalSetLocation();
 		this.cpnsAdd();
+		this.buttonAddActionListener(); 
 		this.setVisible(true);			
 	}	
 	
@@ -134,14 +131,12 @@ public class CheckView extends JFrame implements ActionListener{
 	    rb.setFocusPainted(false);
 	    rb.setIcon(new ImageIcon(Main.class.getResource("../image/check/restartButton.png")));
 	    rb.setSize(310, 160);
-		rb.addActionListener(this);
 				
 		bb.setBorderPainted(false);
 	    bb.setContentAreaFilled(false);
 	    bb.setFocusPainted(false);
 	    bb.setIcon(new ImageIcon(Main.class.getResource("../image/check/backButton.png")));
 	    bb.setSize(310, 160);
-		bb.addActionListener(this);
 				
 	}
 	
@@ -169,7 +164,7 @@ public class CheckView extends JFrame implements ActionListener{
 		lb.setContentAreaFilled(false);
 		lb.setFocusPainted(false);
 		lb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Loseicon.png")));
-		lb.setSize(240, 140); 
+		lb.setSize(240, 140);
 				
 	}
 	
@@ -189,13 +184,12 @@ public class CheckView extends JFrame implements ActionListener{
 	    rb.setFocusPainted(false);
 	    rb.setIcon(new ImageIcon(Main.class.getResource("../image/check/restartButton.png")));
 	    rb.setSize(310, 160);
-		rb.addActionListener(this);
 		bb.setBorderPainted(false);
 	    bb.setContentAreaFilled(false);
 	    bb.setFocusPainted(false);
-	    bb.setIcon(new ImageIcon(Main.class.getResource("../image/check/backButton.png")));
+	    bb.setIcon(new ImageIcon(Main.class.getResource("../image/check/backButton.png"))); //이것만 바꿔주면 fianlview도 완성입니다..ㅠㅠ 
+//	    bb.setIcon(new ImageIcon(Main.class.getResource("../image/check/????.png")));
 	    bb.setSize(310, 160);
-		bb.addActionListener(this);
 		//this.a = new JLabel();
 		//a.setText("Stage1 : "+ bv.getTime() + " 초");
 		//b.setText("Stage2 : "+ bv.getTime() + " 초"); 
@@ -267,9 +261,34 @@ public class CheckView extends JFrame implements ActionListener{
 		this.eb.setLocation(790, 110);
 	}
 
+	public void buttonAddActionListener()
+	{
+		sb.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		rb.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) {
+				restart = false;
+				dispose();
+			}
+		});
+		bb.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) {
+				restart = true;
+				dispose();
+			}
+		});
+	}
+	public boolean restart() {return this.restart;}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		dispose();
 		
 	}
+	
 }	

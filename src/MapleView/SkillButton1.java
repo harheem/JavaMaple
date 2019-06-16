@@ -42,7 +42,7 @@ public class SkillButton1 extends JButton implements MouseListener,Runnable{ //Ä
 		p.skillAttack(0);
 		seb.start(p.getW().getSkillEffect().get(0));
 		t = new Thread(this);
-		t.start();
+		//t.start();
 		}
 		
 	}
@@ -70,6 +70,5 @@ public class SkillButton1 extends JButton implements MouseListener,Runnable{ //Ä
 		// TODO Auto-generated method stub
 
 	}
-	
 }
 

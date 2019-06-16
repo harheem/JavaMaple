@@ -104,5 +104,5 @@ public class EnemyButton extends JButton implements Runnable {
 		}
 		
 	}
-
+	public void stop() {this.t.stop();}
 }

@@ -19,6 +19,10 @@ public class BuffButton extends JButton implements MouseListener, Runnable {
 	public BuffButton(Player p, BuffEffectButton beb, JButton bi) {
 		this.beb = beb;
 		this.p = p;
+		
+		this.setBorderPainted(false);
+		this.setContentAreaFilled(false);
+	    this.setFocusPainted(false);
 		this.bi = bi;
 		this.bi.setBorderPainted(false);
 		this.bi.setContentAreaFilled(false);
