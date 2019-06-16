@@ -8,9 +8,9 @@ public class 팔라딘 extends 전사 {
 			+ "버프스킬: 위협\r\n" + 
 			"자신의 방어력을 25% 증가, 적의 방어력을 25% 감소\r\n" + 
 			"공격스킬1:  블래스트\r\n" + 
-			"MP 20소모 , 공격력\r\n" + 
+			"MP 20소모 , 검으로 적을 찌른다\r\n" + 
 			"공격스킬2: 디바인차지 \r\n" + 
-			"MP50소모, 공격력";
+			"MP50소모, 둔기로 적을 내려찍는다";
 	private double enemy_initial_def;
 	
 	public 팔라딘() {
