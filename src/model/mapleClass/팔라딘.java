@@ -4,17 +4,9 @@ import model.mapleWeapon.두손검;
 
 public class 팔라딘 extends 전사 {
 
-	private static String explanation="팔라딘: 절대 방어의 수호기사가 컨셉인 전사로 엘리멘탈의 힘을 충전하여 자신을 강화한다."
-			+ "버프스킬: 위협\r\n" + 
-			"자신의 방어력을 25% 증가, 적의 방어력을 25% 감소\r\n" + 
-			"공격스킬1:  블래스트\r\n" + 
-			"MP 20소모 , 검으로 적을 찌른다\r\n" + 
-			"공격스킬2: 디바인차지 \r\n" + 
-			"MP50소모, 둔기로 적을 내려찍는다";
 	private double enemy_initial_def;
 	
 	public 팔라딘() {
-		this.explanation="설명";
 		this.w = new 두손검();
 		this.name = "팔라딘";
 		this.power = 100 + w.getWpPower()[w.getWpIndex()];
@@ -26,10 +18,6 @@ public class 팔라딘 extends 전사 {
 		imageIcon.add("../image/player/m/Paladin_p_m.png");
 		imageIcon.add("../image/player/m/Paladin_e_m.png");
 	}
-	public static String getExplanation() {
-		return explanation;
-	}
-
 
 	@Override
 	public void reinforce() {
