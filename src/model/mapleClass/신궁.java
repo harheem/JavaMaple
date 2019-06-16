@@ -36,7 +36,7 @@ public class ½Å±Ã extends ±Ã¼ö {
 		this.m_mp += point * 5;
 		this.hp = this.m_hp;
 		this.mp = this.m_mp;
-		this.initial_power=power * 5;
+		this.initial_power += point * 5;
 		this.power = initial_power;
 	}
 }

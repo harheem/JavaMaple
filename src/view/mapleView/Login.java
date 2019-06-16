@@ -41,7 +41,7 @@ public class Login extends JFrame {
 
 	private JTextField tf_id, tf_pw;
 	private JButton log_in, create_acc, homepage, exit, search_id, search_pw;
-
+	private Music loginmusic;
 	public Login(UserDataList list) {
 		this.l = list;
 		setUndecorated(true);
@@ -56,7 +56,7 @@ public class Login extends JFrame {
 		makeTextField();
 		makeActionListener();
 		
-		Music loginmusic = new Music("Login.mp3", true);
+		loginmusic = new Music("Login.mp3", true);
 		loginmusic.start();
 	}
 
@@ -91,6 +91,7 @@ public class Login extends JFrame {
 				switch (l.logIn(tf_id.getText(), tf_pw.getText())) {
 				case 1:
 					JOptionPane.showMessageDialog(null, "로그인 성공!!");
+					loginmusic.close();
 					dispose();
 					break;
 				case 2:
