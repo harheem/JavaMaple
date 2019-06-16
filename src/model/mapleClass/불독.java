@@ -7,8 +7,8 @@ public class 불독 extends 마법사 {
 	public 불독() {
 		this.w = new 완드();
 		this.name = "불독";
-    	this.power = 150 + w.getWpPower()[w.getWpIndex()];
-    	this.def = 130;
+    	this.power = 160 + w.getWpPower()[w.getWpIndex()];
+    	this.def = 120;
 		imageIcon.add("../image/player/FirePoison_p.png");
 		imageIcon.add("../image/player/FirePoison_e.png");
 		imageIcon.add("../image/player/m/FirePoison_p_m.png");

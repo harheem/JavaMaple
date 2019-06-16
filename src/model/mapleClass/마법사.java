@@ -3,8 +3,8 @@ package model.mapleClass;
 public abstract class 마법사 extends Player {
 	
 	public 마법사() {
-		this.m_hp = 250;
-		this.m_mp = 1250;
+		this.m_hp = 300;
+		this.m_mp = 1500;
 		this.hp = this.m_hp;
 		this.mp = this.m_mp;
 		this.buffSkillName = "매직가드";
