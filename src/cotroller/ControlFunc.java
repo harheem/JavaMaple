@@ -13,8 +13,10 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 	private int playerIndex;
 	private int enemyIndex;
 	private int round;
+	private Login lg;
 	private BattleView bv;
 	private CheckView cv;
+	private SelectView sv;
 	private CheckView finCheck;
 
 	public ControlFunc() {
@@ -36,13 +38,14 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 
 	// 셀렉트뷰를 제어하는 메소드
 	public void selectFunc() {
-		SelectView sv = new SelectView();
+		this.sv = new SelectView();
 		while (true) {
 			if (sv.isVisible())
 				System.out.print("");
 			else
 				break;
 		}
+		sv.getMusic().close();
 		playerIndex = sv.getIndex();
 		p = creator(playerIndex);
 	}
@@ -52,7 +55,7 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 		Random rand = new Random();
 		enemyIndex = rand.nextInt(8);
 		e = creator(enemyIndex);
-		CheckView cv = new CheckView(this.p, this.e);
+		this.cv = new CheckView(this.p, this.e);
 		while (true) {
 			if (cv.isVisible())
 				System.out.print("");
@@ -89,18 +92,27 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 
 		while (true) {
 			if (p.isDead()) {// 플레이어가 죽었으면
+				bv.getMusic().close();
 				closeBattleView();
 				cv = new CheckView(p, e, false); // 체크뷰에 결과를 인자로 전달하기
 				while (cv.isVisible())
 					System.out.print(""); // 입력 기다리기
 				if (!cv.restart()) {
 					reBattle();
+					cv.getMusic().close();
 					return battleFunc();
-				} else return true;
-			} else if (e.isDead()) { // 플레이어가 이겼으면
+				}
+				else {
+					cv.getMusic().close();
+					return true;
+					}
+				}
+			else if (e.isDead()) { // 플레이어가 이겼으면
+				bv.getMusic().close();
 				closeBattleView();
 				cv = new CheckView(p, e, true);
 				threadSleep(3000);
+				CheckView temp=cv;
 				cv.dispose();
 				if (round == 3) {
 					finCheck = new CheckView(p); // final view
@@ -111,6 +123,7 @@ public class ControlFunc { // 메인에서 Controller 객체생성해서 쓰게 메서드 변수 
 					round++;
 					p.reinforce(); // 강화하기
 					checkViewFunc(); // 다음 라운드 시작화면 보이기
+					temp.getMusic().close();
 					return battleFunc(); // 다시호출
 				}
 			}

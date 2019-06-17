@@ -29,6 +29,7 @@ public class CheckView extends JFrame implements ActionListener {
 	private int win; // 생성자 구별하기위한 파라미터
 	private String lose; // 생성자 구별하기위한 파라미터
 	private boolean restart; // 다시 시작할지를 결정
+	private Music checkMusic=null;
 
 	JButton sb = new JButton(); // startButton 누르면 배틀뷰로 넘어감
 	JButton vb = new JButton(); // VSButton 기능없음
@@ -53,6 +54,7 @@ public class CheckView extends JFrame implements ActionListener {
 
 	// 이기거나 졌을 때
 	public CheckView(Player p, Player e, boolean win) {
+	
 		this.p = p;
 		this.e = e;
 		this.stageNum = p.getW().getWpIndex() + 1; // 무기 index값+1이 스테이지 넘버
@@ -70,11 +72,12 @@ public class CheckView extends JFrame implements ActionListener {
 		this.buttonAddActionListener(); // rb랑 bb에 리스너달기
 		this.cpnsAdd();
 		this.setVisible(true);
-
+		this.checkMusic.start();
 	}
 
 	// finalView
 	public CheckView(Player p) {
+		
 		this.p = p;
 		this.stageNum = p.getW().getWpIndex() + 1;// 무기 index값+1이 스테이지 넘버
 		defaultViewSet();
@@ -135,7 +138,7 @@ public class CheckView extends JFrame implements ActionListener {
 		bb.setFocusPainted(false);
 		bb.setIcon(new ImageIcon(Main.class.getResource("../image/check/backButton.png")));
 		bb.setSize(310, 160);
-
+		this.checkMusic = new Music("Lose.mp3", true);
 	}
 
 	public void winCreator() {
@@ -162,7 +165,7 @@ public class CheckView extends JFrame implements ActionListener {
 		lb.setFocusPainted(false);
 		lb.setIcon(new ImageIcon(Main.class.getResource("../image/check/Loseicon.png")));
 		lb.setSize(240, 140);
-
+		this.checkMusic = new Music("StageWin.mp3", true);
 	}
 
 	public void finalCreator() {
@@ -264,17 +267,20 @@ public class CheckView extends JFrame implements ActionListener {
 	public void buttonAddActionListener() {
 		sb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				checkMusic.close();
 				dispose();
 			}
 		});
 		rb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				checkMusic.close();
 				restart = false;
 				dispose();
 			}
 		});
 		bb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				checkMusic.close();
 				restart = true;
 				dispose();
 			}
@@ -282,6 +288,7 @@ public class CheckView extends JFrame implements ActionListener {
 		});
 		xb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				checkMusic.close();
 				dispose();
 			}
 
@@ -297,6 +304,10 @@ public class CheckView extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		dispose();
 
+	}
+	
+	public Music getMusic() {
+		return this.checkMusic;
 	}
 
 }

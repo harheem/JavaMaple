@@ -44,6 +44,7 @@ public class BattleView extends JFrame implements Runnable { // View에선 버튼의 
 	private Image screenImage;
 	private Image selectBackground;
 	private Graphics screenGraphic;
+	private Music stageMusic;
 
 	// 각각 mp가 없을때 버프사용을 막기위한 변수입니다. true면 mp가 없어서 스킬을 못쓰는 상태입니다.
 	private boolean buffIssue;
@@ -62,6 +63,8 @@ public class BattleView extends JFrame implements Runnable { // View에선 버튼의 
 		skill2Issue = false;
 		// 스테이지 배경 설정하기
 		this.stageNum = p.getW().getWpIndex() + 1; // 무기 index값+1이 스테이지 넘버
+		this.stageMusic = new Music("Stage"+this.stageNum+".mp3", true);
+		this.stageMusic.start();
 		defaultViewSet();
 
 		// 타이머쓰레드 실행
@@ -298,6 +301,10 @@ public class BattleView extends JFrame implements Runnable { // View에선 버튼의 
 	{
 		t.stop(); //타이머쓰레드
 		p2.stop(); //에너미 버튼 쓰레드 
+	}
+	
+	public Music getMusic() {
+		return this.stageMusic;
 	}
 }
 

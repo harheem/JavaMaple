@@ -181,6 +181,10 @@ public class Login extends JFrame {
 		n.setVisible(true);
 		return n;
 	}
+
+	public Music getMusic() {
+		return this.loginmusic;
+	}
 }
 // 아이디 생성하는 프레임
 class MembershipView extends JFrame {
@@ -293,6 +297,7 @@ class MembershipView extends JFrame {
 		paintComponents(g);
 		this.repaint();
 	}
+	
 }
 
 //아이디 찾는 프레임

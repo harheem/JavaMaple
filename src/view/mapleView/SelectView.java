@@ -29,6 +29,7 @@ public class SelectView extends JFrame { // View에선 버튼의 생성과 추가 및 Locat
 	private Graphics screenGraphic;
 	private int yLctn; // 직업명 버튼 y좌표
 	private int index; // 사용자가 선택한 직업 인덱스번호
+	private Music lobbyMusic;
 	
 
 	public SelectView() {
@@ -37,6 +38,8 @@ public class SelectView extends JFrame { // View에선 버튼의 생성과 추가 및 Locat
 		this.imgButton = new JButton[8];
 		this.img = new ImageIcon[8];
 		this.name = new ImageIcon[8];
+		this.lobbyMusic = new Music("Lobby.mp3", true);
+		this.lobbyMusic.start();
 
 		for (int i = 0; i < 8; i++) {
 			this.imgButton[i] = new JButton();
@@ -162,6 +165,10 @@ public class SelectView extends JFrame { // View에선 버튼의 생성과 추가 및 Locat
 
 	public void setIndex(int i) {
 		this.index = i;
+	}
+	
+	public Music getMusic() {
+		return this.lobbyMusic;
 	}
 
 }
