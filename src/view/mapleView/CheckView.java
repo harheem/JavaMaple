@@ -267,20 +267,17 @@ public class CheckView extends JFrame implements ActionListener {
 	public void buttonAddActionListener() {
 		sb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				checkMusic.close();
 				dispose();
 			}
 		});
 		rb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				checkMusic.close();
 				restart = false;
 				dispose();
 			}
 		});
 		bb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				checkMusic.close();
 				restart = true;
 				dispose();
 			}
@@ -288,7 +285,6 @@ public class CheckView extends JFrame implements ActionListener {
 		});
 		xb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				checkMusic.close();
 				dispose();
 			}
 
