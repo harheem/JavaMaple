@@ -82,13 +82,13 @@ public class EnemyButton extends JButton implements Runnable {
 				if(this.skill2CoolTime>0)
 				{
 					p.skillAttack(0); //스킬1공격합니다
-					seb.start(p.getW().getSkillEffect().get(3)); //스킬1 이펙트를 날립니다
+					seb.start(p.getW().getSkillEffect().get(2)); //스킬1 이펙트를 날립니다
 				}
 				else
 				{
 					p.skillAttack(1); //스킬2공격합니다
 					this.skill2CoolTime = 2; // 쿨타임 설정 실제 쿨타임은 절대적인 시간으로 (쓰레드슬립시간 * 쿨타임설정숫자) 만큼 쿨타임이 걸립니다
-					seb.start(p.getW().getSkillEffect().get(4)); //스킬2 이펙트를 날립니다
+					seb.start(p.getW().getSkillEffect().get(3)); //스킬2 이펙트를 날립니다
 					this.skill2CoolTime++; //맨 밑에서 스킬쿨타임을 줄이므로 여기서 하나 더 늘려줍니다
 				}
 
