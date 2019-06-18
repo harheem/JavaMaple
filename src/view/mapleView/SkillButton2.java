@@ -29,7 +29,7 @@ public class SkillButton2 extends JButton implements MouseListener, Runnable{
 	{
 		this.setEnabled(false);
 		try {
-			Thread.sleep(5000); //ÄğÅ¸ÀÓ
+			Thread.sleep(3000); //ÄğÅ¸ÀÓ
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

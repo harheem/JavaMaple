@@ -7,7 +7,7 @@ public class ½ãÄÝ extends ¸¶¹ý»ç {
 	public ½ãÄÝ() {
 		this.w = new ½ºÅÂÇÁ();
 		this.name = "½ãÄÝ";
-    	this.power = 160 + w.getWpPower()[w.getWpIndex()];
+    	this.power = 180 + w.getWpPower()[w.getWpIndex()];
     	this.def = 120;
 		imageIcon.add("../image/player/IceLightning_p.png");
 		imageIcon.add("../image/player/IceLightning_e.png");
